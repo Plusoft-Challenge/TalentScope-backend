@@ -903,47 +903,47 @@
 ```json
 [
   {
-  "id": 1,
-  "arquivo": "Igor.pdf",
-  "data_envio": "08/04/2023 - 09:04:35",
-  "nome_candidato": "Igor Oliveira",
-  "email_candidato": "igor@gmail.com",
-  "vaga":
-    {
-      "nome": "Desenvolvedor Java"
-    }
-  "feedback":
-    {
-      "id": 1,
-      "descricao": "Parabéns! Você foi aprovado",
-      "resultado": true,
-      "data_analise": "08/04/2023 - 09:10:35",
-      "envio": false,
-      "data_programada": "15/04/2023 - 18:00:00",
-      "data_envio_feedback": ""
-    }
-  }
+    "id": 1,
+    "arquivo": "Igor.pdf",
+    "data_envio": "08/04/2023 - 09:04:35",
+    "nome_candidato": "Igor Oliveira",
+    "email_candidato": "igor@gmail.com",
+    "vaga":
+      {
+        "nome": "Desenvolvedor Java"
+      }
+    "feedback":
+      {
+        "id": 1,
+        "descricao": "Parabéns! Você foi aprovado",
+        "resultado": true,
+        "data_analise": "08/04/2023 - 09:10:35",
+        "envio": false,
+        "data_programada": "15/04/2023 - 18:00:00",
+        "data_envio_feedback": ""
+      }
+  },
   {
-   "id": 2,
-  "arquivo": "noah.pdf",
-  "data_envio": "20/05/2023 - 14:00:45",
-  "nome_candidato": "Noah Abreu",
-  "email_candidato": "noah@gmail.com",
-  "vaga":
-    {
-      "nome": "Analista de Dados"
+    "id": 2,
+    "arquivo": "noah.pdf",
+    "data_envio": "20/05/2023 - 14:00:45",
+    "nome_candidato": "Noah Abreu",
+    "email_candidato": "noah@gmail.com",
+    "vaga":
+      {
+        "nome": "Analista de Dados"
+      }
+    "feedback":
+      {
+        "id": 2,
+        "descricao": "Sinto muito! Infelizmente você não foi aprovado.",
+        "resultado": false,
+        "data_analise": "08/04/2023 - 09:10:35",
+        "envio": true,
+        "data_programada": "15/04/2023 - 18:00:00",
+        "data_envio_feedback": "15/04/2023 - 18:00:00"
+      }
     }
-  "feedback":
-    {
-      "id": 1,
-      "descricao": "Parabéns! Você foi aprovado",
-      "resultado": true,
-      "data_analise": "08/04/2023 - 09:10:35",
-      "envio": false,
-      "data_programada": "15/04/2023 - 18:00:00",
-      "data_envio_feedback": ""
-    }
-  }
 ]
 
 
@@ -958,7 +958,7 @@
 
 ```json
 {
-  "retorno": "Não há usuarios para retornar"
+  "retorno": "Não há curriculos para retornar"
 }
 ```
 
@@ -978,9 +978,9 @@
 </details>
 
 <details>
-<summary> <b style="color:cyan">GET</b> /api/talentTracker/usuario/{id}</summary>
+<summary> <b style="color:cyan">GET</b> /api/talentTracker/curriculo/{id}</summary>
 
-# Mostrar detalhes de um usuario
+# Mostrar detalhes de um curriculo
 
 <br/>
 
@@ -992,15 +992,26 @@
 
 ```json
 {
-  "id": 1,
-  "nome": "Luiza Sachi",
-  "email": "luiza@gmail.com",
-  "senha": "Ol@mundo123",
-  "nivelPermissao": "administrador",
-  "ativo": true,
-  "data_criacao": "02/03/2023 - 09:04:35",
-  "data_atualizacao": ;
-}
+    "id": 1,
+    "arquivo": "Igor.pdf",
+    "data_envio": "08/04/2023 - 09:04:35",
+    "nome_candidato": "Igor Oliveira",
+    "email_candidato": "igor@gmail.com",
+    "vaga":
+      {
+        "nome": "Desenvolvedor Java"
+      }
+    "feedback":
+      {
+        "id": 1,
+        "descricao": "Parabéns! Você foi aprovado",
+        "resultado": true,
+        "data_analise": "08/04/2023 - 09:10:35",
+        "envio": false,
+        "data_programada": "15/04/2023 - 18:00:00",
+        "data_envio_feedback": ""
+      }
+  },
 ```
 
 <br/>
@@ -1012,7 +1023,7 @@
 
 ```json
 {
-  "retorno": "Usuario não cadastrado"
+  "retorno": "Curriculo não cadastrado"
 }
 ```
 
@@ -1031,26 +1042,37 @@
 </details>
 
 <details>
-<summary> <b style="color:orange">UPDATE</b> /api/talentTracker/usuario/{id}</summary>
+<summary> <b style="color:orange">UPDATE</b> /api/talentTracker/curriculo/{id}</summary>
 
 <br/>
 
-# Atualização usuario
+# Atualização curriculo
 
 ### Requisição:
 
 
 ```json
 {
-  "id": 1,
-  "nome": "Luiza Sachi",
-  "email": "luiza.sachi@gmail.com",
-  "senha": "Ol@mundo123",
-  "nivelPermissao": "administrador",
-  "ativo": true,
-  "data_criacao": "02/03/2023 - 09:04:35",
-  "data_atualizacao": "05/04/2023 - 14:45:10";
-},
+    "id": 1,
+    "arquivo": "Igor.pdf",
+    "data_envio": "08/04/2023 - 09:04:35",
+    "nome_candidato": "Igor Oliveira",
+    "email_candidato": "igor@gmail.com",
+    "vaga":
+      {
+        "nome": "Desenvolvedor Java"
+      }
+    "feedback":
+      {
+        "id": 1,
+        "descricao": "Parabéns! Você foi aprovado",
+        "resultado": true,
+        "data_analise": "08/04/2023 - 09:10:35",
+        "envio": true,
+        "data_programada": "15/04/2023 - 18:00:00",
+        "data_envio_feedback": "15/04/2023 - 18:00:00"
+      }
+  },
 ```
 <br/>
 
@@ -1064,15 +1086,26 @@
 
 ```json
 {
-  "id": 1,
-  "nome": "Luiza Sachi",
-  "email": "luiza.sachi@gmail.com",
-  "senha": "Ol@mundo123",
-  "nivelPermissao": "administrador",
-  "ativo": true,
-  "data_criacao": "02/03/2023 - 09:04:35",
-  "data_atualizacao": "05/04/2023 - 14:45:10";
-}
+    "id": 1,
+    "arquivo": "Igor.pdf",
+    "data_envio": "08/04/2023 - 09:04:35",
+    "nome_candidato": "Igor Oliveira",
+    "email_candidato": "igor@gmail.com",
+    "vaga":
+      {
+        "nome": "Desenvolvedor Java"
+      }
+    "feedback":
+      {
+        "id": 1,
+        "descricao": "Parabéns! Você foi aprovado",
+        "resultado": true,
+        "data_analise": "08/04/2023 - 09:10:35",
+        "envio": true,
+        "data_programada": "15/04/2023 - 18:00:00",
+        "data_envio_feedback": "15/04/2023 - 18:00:00"
+      }
+  },
 ```
 <br/>
 <hr>
@@ -1091,11 +1124,11 @@
 </details>
 
 <details>
-<summary> <b style="color:red">DELETE</b> /api/talentTracker/usuario/{id}</summary>
+<summary> <b style="color:red">DELETE</b> /api/talentTracker/curriculo/{id}</summary>
 
 <br/>
 
-# Apagar usuario
+# Apagar curriculo
 
 <br/>
 
@@ -1107,7 +1140,7 @@
 
 ```json
 {
-  "retorno": "Usuario apagado com sucesso"
+  "retorno": "Curriculo apagado com sucesso"
 }
 ```
 
@@ -1130,15 +1163,14 @@
 
 # Tabela banco de dados
 
-|      campo       |   tipo    | obrigatório | descrição                                                                                                  |
-| :--------------: | :-------: | :---------: | ---------------------------------------------------------------------------------------------------------- |
-|        id        |    int    |     sim     | Id da conta com auto-incremento                                                                            |
-|       nome       | varchar() |     sim     | Nome do usuario                                                                                            |
-|      email       | varchar() |     sim     | Email do usuario                                                                                           |
-|      senha       |  varchar  |     sim     | Senha do usuario. Senha deve conter de 8 a 15 caracteres, no min. 1 letra maiuscula e 1 caractere especial |
-|  nivelPermissao  | varchar() |     sim     | Nivel de permissão para utilizar a plataforma                                                              |
-|      ativo       |  boolean  |     sim     | Flag para informar se o usuario esta ativo na plataforma                                                   |
-|   data_criacao   |   Date    |     sim     | Data da criação do usuario                                                                                 |
-| data_atualizacao |   Date    |     nao     | Data da atualização do usuario                                                                             |
+|      campo       |   tipo    | obrigatório | descrição |
+| :--------------: | :-------: | :---------: | ----------|
+|        id        |    int    |     sim     | Id do curriculo auto-incremento |
+| arquivo | blob |     sim     | Curriculo anexado |
+| data_envio | Date |     sim     | Data do envio do currículo |
+|      nome_candidato       |  varchar  |     sim     | Nome do candidato |
+|  email_candidato  | varchar() |     sim     | Email do candidato |
+|      envio_feedback       |  boolean  |     sim     | Verifica se o feedback foi enviado ou não |
+|   dt_envio   |   Date    |     sim     | Data da criação do usuario  |
 
 </details>

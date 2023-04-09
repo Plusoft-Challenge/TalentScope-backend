@@ -53,7 +53,7 @@
   "nivelPermissao": "administrador",
   "ativo": true,
   "data_criacao": "08/04/2023 - 09:04:35",
-  "data_atualizacao": ;
+  "data_atualizacao":
 }
 ```
 
@@ -74,7 +74,7 @@
   "nivelPermissao": "administrador",
   "ativo": true,
   "data_criacao": "08/04/2023 - 09:04:35",
-  "data_atualizacao": ;
+  "data_atualizacao":
 }
 ```
 
@@ -129,7 +129,7 @@
     "nivelPermissao": "administrador",
     "ativo": true,
     "data_criacao": "10/04/2023 - 15:25:20",
-    "data_atualizacao": ;
+    "data_atualizacao":
   }
 ]
 
@@ -188,7 +188,7 @@
   "nivelPermissao": "administrador",
   "ativo": true,
   "data_criacao": "02/03/2023 - 09:04:35",
-  "data_atualizacao": ;
+  "data_atualizacao":
 }
 ```
 
@@ -378,7 +378,7 @@
       "nivelPermissao": "administrador",
       "ativo": true,
       "data_criacao": "02/03/2023 - 09:04:35",
-      "data_atualizacao": ;
+      "data_atualizacao":
     }
   ],
 }
@@ -422,7 +422,7 @@
       "nivelPermissao": "administrador",
       "ativo": true,
       "data_criacao": "02/03/2023 - 09:04:35",
-      "data_atualizacao": ;
+      "data_atualizacao":
     }
   ],
 }
@@ -491,7 +491,7 @@
         "nivelPermissao": "administrador",
         "ativo": true,
         "data_criacao": "02/03/2023 - 09:04:35",
-        "data_atualizacao": ;
+        "data_atualizacao":
       }
     ],
   }
@@ -524,7 +524,7 @@
       "nivelPermissao": "administrador",
       "ativo": true,
       "data_criacao": "10/04/2023 - 15:25:20",
-      "data_atualizacao": ;
+      "data_atualizacao":
     }
   }
 ]
@@ -604,7 +604,7 @@
       "nivelPermissao": "administrador",
       "ativo": true,
       "data_criacao": "02/03/2023 - 09:04:35",
-      "data_atualizacao": ;
+      "data_atualizacao":
     }
   ],
 }
@@ -683,7 +683,7 @@
       "nivelPermissao": "administrador",
       "ativo": true,
       "data_criacao": "02/03/2023 - 09:04:35",
-      "data_atualizacao": ;
+      "data_atualizacao":
     }
   ],
  }
@@ -734,7 +734,7 @@
       "nivelPermissao": "administrador",
       "ativo": true,
       "data_criacao": "02/03/2023 - 09:04:35",
-      "data_atualizacao": ;
+      "data_atualizacao":
     }
   ],
 }
@@ -844,7 +844,7 @@
       "data_analise": "08/04/2023 - 09:10:35",
       "envio": false,
       "data_programada": "15/04/2023 - 18:00:00",
-      "data_envio_feedback": ""
+      "data_envio_feedback":
     }
 }
 ```
@@ -875,7 +875,7 @@
       "data_analise": "08/04/2023 - 09:10:35",
       "envio": false,
       "data_programada": "15/04/2023 - 18:00:00",
-      "data_envio_feedback": ""
+      "data_envio_feedback":
     }
 }
 ```
@@ -931,7 +931,7 @@
         "data_analise": "08/04/2023 - 09:10:35",
         "envio": false,
         "data_programada": "15/04/2023 - 18:00:00",
-        "data_envio_feedback": ""
+        "data_envio_feedback":
       }
   },
   {
@@ -1020,7 +1020,7 @@
       "data_analise": "08/04/2023 - 09:10:35",
       "envio": false,
       "data_programada": "15/04/2023 - 18:00:00",
-      "data_envio_feedback": ""
+      "data_envio_feedback":
     }
 },
 ```

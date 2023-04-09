@@ -1,6 +1,8 @@
 # TalentTracker
 
-## Uma api para automatização de leitura de currículo
+## Uma api para automatização de leitura de currículo e envio de feedbacks personalizados
+
+<br/>
 
 - > <h2>Usuario</h2>
   - [Cadastrar](#cadastrar-usuario)

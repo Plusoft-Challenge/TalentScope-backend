@@ -119,7 +119,7 @@
     "nivelPermissao": "administrador",
     "ativo": true,
     "data_criacao": "02/03/2023 - 09:04:35",
-    "data_atualizacao": ;
+    "data_atualizacao":
   },
   {
     "id": 2,
@@ -238,7 +238,7 @@
   "nivelPermissao": "administrador",
   "ativo": true,
   "data_criacao": "02/03/2023 - 09:04:35",
-  "data_atualizacao": "05/04/2023 - 14:45:10";
+  "data_atualizacao": "05/04/2023 - 14:45:10"
 },
 ```
 <br/>
@@ -260,7 +260,7 @@
   "nivel_permissao": "administrador",
   "ativo": true,
   "data_criacao": "02/03/2023 - 09:04:35",
-  "data_atualizacao": "05/04/2023 - 14:45:10";
+  "data_atualizacao": "05/04/2023 - 14:45:10"
 }
 ```
 <br/>

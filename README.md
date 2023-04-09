@@ -3,28 +3,28 @@
 ## Uma api para automatização de leitura de currículo
 
 - > <h2>Usuario</h2>
-  - [Cadastrar](#cadastrar-um-usuario)
-  - [Listar todos](#listar-todos-usuarios)
-  - [Mostrar detalhes](#mostrar-detalhes-de-um-usuario)
-  - [Atualizar](#atualização-usuario)
+  - [Cadastrar](#cadastrar-usuario)
+  - [Listar todos](#listar-usuarios)
+  - [Mostrar detalhes](#detalhar-um-usuario)
+  - [Atualizar](#atualizar-usuario)
   - [Apagar](#apagar-usuario)
 
 <br/>
 
 - > <h2>Vaga</h2>
-  - [Cadastrar](#cadastrar-uma-vaga)
-  - [Listar todas](#listar-todas-vagas)
-  - [Mostrar detalhes](#mostrar-detalhes-de-uma-vaga)
-  - [Atualizar](#atualização-vaga)
+  - [Cadastrar](#cadastrar-vaga)
+  - [Listar todas](#listar-vagas)
+  - [Mostrar detalhes](#detalhar-um-vaga)
+  - [Atualizar](#atualizar-vaga)
   - [Apagar](#apagar-vaga)
 
 <br/>
 
 - > <h2>Curriculo</h2>
-  - [Cadastrar](#cadastrar-um-curriculo)
-  - [Listar todos](#listar-todos-curriculos)
-  - [Mostrar detalhes](#mostrar-detalhes-de-um-curriculo)
-  - [Atualizar](#atualização-curriculo)
+  - [Cadastrar](#cadastrar-curriculo)
+  - [Listar todos](#listar-curriculos)
+  - [Mostrar detalhes](#detalhar-um-curriculo)
+  - [Atualizar](#atualizar-curriculo)
   - [Apagar](#apagar-curriculo)
 
 <br/>
@@ -39,7 +39,7 @@
 
 <br/>
 
-# Cadastrar um usuario
+### Cadastrar usuario
 
 <br/>
 
@@ -47,13 +47,13 @@
 
 ```json
 {
-    "nome": "Luiza Sachi",
-    "email": "luiza@gmail.com",
-    "senha": "Ol@mundo123",
-    "nivelPermissao": "administrador",
-    "ativo": true,
-    "data_criacao": "08/04/2023 - 09:04:35",
-    "data_atualizacao": ;
+  "nome": "Luiza Sachi",
+  "email": "luiza@gmail.com",
+  "senha": "Ol@mundo123",
+  "nivelPermissao": "administrador",
+  "ativo": true,
+  "data_criacao": "08/04/2023 - 09:04:35",
+  "data_atualizacao": ;
 }
 ```
 
@@ -99,7 +99,7 @@
 
 <br/>
 
-# Listar todos usuarios
+### Listar usuarios
 
 <br/>
 
@@ -167,7 +167,9 @@
 <details>
 <summary> <b style="color:cyan">GET</b> /api/talentTracker/usuario/{id}</summary>
 
-# Mostrar detalhes de um usuario
+<br/>
+
+### Detalhar um usuario
 
 <br/>
 
@@ -222,7 +224,7 @@
 
 <br/>
 
-# Atualização usuario
+### Atualizar usuario
 
 ### Requisição:
 
@@ -255,7 +257,7 @@
   "nome": "Luiza Sachi",
   "email": "luiza.sachi@gmail.com",
   "senha": "Ol@mundo123",
-  "nivelPermissao": "administrador",
+  "nivel_permissao": "administrador",
   "ativo": true,
   "data_criacao": "02/03/2023 - 09:04:35",
   "data_atualizacao": "05/04/2023 - 14:45:10";
@@ -271,7 +273,7 @@
 
 ```json
 {
-  "retorno": "{Mensagem de erro...}"
+  "retorno": "{Mensagem de erro conforme regra de negocio}"
 }
 ```
 
@@ -282,7 +284,7 @@
 
 <br/>
 
-# Apagar usuario
+### Apagar usuario
 
 <br/>
 
@@ -307,7 +309,7 @@
 
 ```json
 {
-  "retorno": "Mensagem de erro conforme regras de negócios"
+  "retorno": "Usuario não cadastrado"
 }
 ```
 
@@ -315,18 +317,18 @@
 
 <br/><br/>
 
-# Tabela banco de dados
+# Campos de Requisição
 
-|      campo       |   tipo    | obrigatório | descrição                                                                                                  |
-| :--------------: | :-------: | :---------: | ---------------------------------------------------------------------------------------------------------- |
-|        id        |    int    |     sim     | Id da conta com auto-incremento                                                                            |
-|       nome       | varchar() |     sim     | Nome do usuario                                                                                            |
-|      email       | varchar() |     sim     | Email do usuario                                                                                           |
-|      senha       |  varchar  |     sim     | Senha do usuario. Senha deve conter de 8 a 15 caracteres, no min. 1 letra maiuscula e 1 caractere especial |
-|  nivelPermissao  | varchar() |     sim     | Nivel de permissão para utilizar a plataforma                                                              |
-|      ativo       |  boolean  |     sim     | Flag para informar se o usuario esta ativo na plataforma                                                   |
-|   data_criacao   |   Date    |     sim     | Data da criação do usuario                                                                                 |
-| data_atualizacao |   Date    |     nao     | Data da atualização do usuario                                                                             |
+|       campo       |     tipo    | obrigatório | descrição                                                                                                  |
+| :---------------: | :---------: | :---------: | ---------------------------------------------------------------------------------------------------------- |
+|        id         | numeric(10) |     sim     | Id da conta                                                                                                |
+|       nome        | varchar(80) |     sim     | Nome do usuario                                                                                            |
+|       email       | varchar(80) |     sim     | Email do usuario                                                                                           |
+|       senha       | varchar(15) |     sim     | Senha do usuario. Senha deve conter de 8 a 15 caracteres, no min. 1 letra maiuscula e 1 caractere especial |
+|  nivel_permissao  | varchar(20) |     sim     | Nivel de permissão para utilizar a plataforma                                                              |
+|       ativo       | Boolean(1)  |     sim     | Flag para informar se o usuario esta ativo na plataforma                                                   |
+|   data_criacao    |  Datetime   |     sim     | Data da criação do usuario                                                                                 |
+| data_atualizacao  |  Datetime   |     nao     | Data da atualização do usuario                                                                             |
 
 </details>
 
@@ -340,7 +342,7 @@
 
 <br/>
 
-# Cadastrar uma vaga
+### Cadastrar vaga
 
 <br/>
 
@@ -366,6 +368,7 @@
   "salario": 8000.00,
   "data_abertura": "08/04/2023 - 13:00:00",
   "data_encerramento": "08/07/2023 - 17:00:00",
+  "data_envio_feedback": "15/04/2023 - 17:00:00",
   "usuario": [
     {
       "id": 1,
@@ -402,13 +405,14 @@
     }
     {
       "id":2,
-      "habilidade": "ActiveMQ"
+      "habilidade": "ActiveMQ",
       "descricao": "Saber manipular objetos com mensageria"
     }
   ],
   "salario": 8000.00,
   "data_abertura": "08/04/2023 - 13:00:00",
   "data_encerramento": "08/07/2023 - 17:00:00",
+  "data_envio_feedback": "15/04/2023 - 17:00:00",
   "usuario": [
     {
       "id": 1,
@@ -445,7 +449,7 @@
 
 <br/>
 
-# Listar todas as vagas
+### Listar vagas
 
 <br/>
 
@@ -477,6 +481,7 @@
     "salario": 8000.00,
     "data_abertura": "08/04/2023 - 13:00:00",
     "data_encerramento": "08/07/2023 - 17:00:00",
+    "data_envio_feedback": "15/04/2023 - 17:00:00",
     "usuario": [
       {
         "id": 1,
@@ -509,7 +514,8 @@
     ],
     "salario": 4000.00,
     "data_abertura": "15/04/2023 - 11:00:00",
-    "data_encerramento": "15/07/2023 - 17:00:00";
+    "data_encerramento": "15/07/2023 - 17:00:00",
+    "data_envio_feedback": "15/04/2023 - 17:00:00",
     {
       "id": 2,
       "nome": "Nicolas Almeida",
@@ -554,10 +560,10 @@
 </details>
 
 <details>
-<summary> <b style="color:cyan">GET</b> /api/talentTracker/usuario/{id}</summary>
+<summary> <b style="color:cyan">GET</b> /api/talentTracker/vaga/{id}</summary>
 <br/>
 
-# mostrar detalhes de uma vaga
+### Detalhar uma vaga
 
 <br/>
 
@@ -569,38 +575,39 @@
 
 ```json
 {
-    "id:": 1,
-    "nome": "Desenvolvedor Java",
-    "cargo": "Analista Pleno",
-    "descricao": "Conhecimentos Sólidos em Java e microserviços",
-    "habilidades": [
-      {
-        "id": 1,
-        "habilidade": "Java",
-        "descricao": "Saber programar em Java"
-      }
-      {
-        "id":2,
-        "habilidade": "ActiveMQ"
-        "descricao": "Saber manipular objetos com mensageria"
-      }
-    ],
-    "salario": 8000.00,
-    "data_abertura": "08/04/2023 - 13:00:00",
-    "data_encerramento": "08/07/2023 - 17:00:00",
-    "usuario": [
-      {
-        "id": 1,
-        "nome": "Luiza Sachi",
-        "email": "luiza@gmail.com",
-        "senha": "Ol@mundo123",
-        "nivelPermissao": "administrador",
-        "ativo": true,
-        "data_criacao": "02/03/2023 - 09:04:35",
-        "data_atualizacao": ;
-      }
-    ],
-  }
+  "id:": 1,
+  "nome": "Desenvolvedor Java",
+  "cargo": "Analista Pleno",
+  "descricao": "Conhecimentos Sólidos em Java e microserviços",
+  "habilidades": [
+    {
+      "id": 1,
+      "habilidade": "Java",
+      "descricao": "Saber programar em Java"
+    }
+    {
+      "id":2,
+      "habilidade": "ActiveMQ"
+      "descricao": "Saber manipular objetos com mensageria"
+    }
+  ],
+  "salario": 8000.00,
+  "data_abertura": "08/04/2023 - 13:00:00",
+  "data_encerramento": "08/07/2023 - 17:00:00",
+  "data_envio_feedback": "15/04/2023 - 17:00:00",
+  "usuario": [
+    {
+      "id": 1,
+      "nome": "Luiza Sachi",
+      "email": "luiza@gmail.com",
+      "senha": "Ol@mundo123",
+      "nivelPermissao": "administrador",
+      "ativo": true,
+      "data_criacao": "02/03/2023 - 09:04:35",
+      "data_atualizacao": ;
+    }
+  ],
+}
 ```
 
 <br/>
@@ -635,50 +642,51 @@
 
 <br/>
 
-# Atualização vaga
+### Atualizar vaga
 
 ### Requisição:
 
 
 ```json
 {
-    "id:": 1,
-    "nome": "Desenvolvedor Java",
-    "cargo": "Analista Pleno",
-    "descricao": "Conhecimentos Sólidos em Java e microserviços",
-    "habilidades": [
-      {
-        "id": 1,
-        "habilidade": "Java",
-        "descricao": "Saber programar em Java"
-      }
-      {
-        "id": 2,
-        "habilidade": "ActiveMQ"
-        "descricao": "Saber manipular objetos com mensageria"
-      }
-      {
-        "id": 3,
-        "habilidade": "SQL"
-        "descricao": "Saber manipular objetos com SQL"
-      }
-    ],
-    "salario": 8000.00,
-    "data_abertura": "08/04/2023 - 13:00:00",
-    "data_encerramento": "08/07/2023 - 17:00:00",
-    "usuario": [
-      {
-        "id": 1,
-        "nome": "Luiza Sachi",
-        "email": "luiza@gmail.com",
-        "senha": "Ol@mundo123",
-        "nivelPermissao": "administrador",
-        "ativo": true,
-        "data_criacao": "02/03/2023 - 09:04:35",
-        "data_atualizacao": ;
-      }
-    ],
-  }
+  "id:": 1,
+  "nome": "Desenvolvedor Java",
+  "cargo": "Analista Pleno",
+  "descricao": "Conhecimentos Sólidos em Java e microserviços",
+  "habilidades": [
+    {
+      "id": 1,
+      "habilidade": "Java",
+      "descricao": "Saber programar em Java"
+    }
+    {
+      "id": 2,
+      "habilidade": "ActiveMQ"
+      "descricao": "Saber manipular objetos com mensageria"
+    }
+    {
+      "id": 3,
+      "habilidade": "SQL"
+      "descricao": "Saber manipular objetos com SQL"
+    }
+  ],
+  "salario": 8000.00,
+  "data_abertura": "08/04/2023 - 13:00:00",
+  "data_encerramento": "08/07/2023 - 17:00:00",
+  "data_envio_feedback": "15/04/2023 - 17:00:00",
+  "usuario": [
+    {
+      "id": 1,
+      "nome": "Luiza Sachi",
+      "email": "luiza@gmail.com",
+      "senha": "Ol@mundo123",
+      "nivelPermissao": "administrador",
+      "ativo": true,
+      "data_criacao": "02/03/2023 - 09:04:35",
+      "data_atualizacao": ;
+    }
+  ],
+ }
 ```
 <br/>
 
@@ -692,43 +700,44 @@
 
 ```json
 {
-    "id:": 1,
-    "nome": "Desenvolvedor Java",
-    "cargo": "Analista Pleno",
-    "descricao": "Conhecimentos Sólidos em Java e microserviços",
-    "habilidades": [
-      {
-        "id": 1,
-        "habilidade": "Java",
-        "descricao": "Saber programar em Java"
-      }
-      {
-        "id": 2,
-        "habilidade": "ActiveMQ"
-        "descricao": "Saber manipular objetos com mensageria"
-      }
-      {
-        "id": 3,
-        "habilidade": "SQL"
-        "descricao": "Saber manipular objetos com SQL"
-      }
-    ],
-    "salario": 8000.00,
-    "data_abertura": "08/04/2023 - 13:00:00",
-    "data_encerramento": "08/07/2023 - 17:00:00",
-    "usuario": [
-      {
-        "id": 1,
-        "nome": "Luiza Sachi",
-        "email": "luiza@gmail.com",
-        "senha": "Ol@mundo123",
-        "nivelPermissao": "administrador",
-        "ativo": true,
-        "data_criacao": "02/03/2023 - 09:04:35",
-        "data_atualizacao": ;
-      }
-    ],
-  }
+  "id:": 1,
+  "nome": "Desenvolvedor Java",
+  "cargo": "Analista Pleno",
+  "descricao": "Conhecimentos Sólidos em Java e microserviços",
+  "habilidades": [
+    {
+      "id": 1,
+      "habilidade": "Java",
+      "descricao": "Saber programar em Java"
+    }
+    {
+      "id": 2,
+      "habilidade": "ActiveMQ",
+      "descricao": "Saber manipular objetos com mensageria"
+    }
+    {
+      "id": 3,
+      "habilidade": "SQL"
+      "descricao": "Saber manipular objetos com SQL"
+    }
+  ],
+  "salario": 8000.00,
+  "data_abertura": "08/04/2023 - 13:00:00",
+  "data_encerramento": "08/07/2023 - 17:00:00",
+  "data_envio_feedback": "15/04/2023 - 17:00:00",
+  "usuario": [
+    {
+      "id": 1,
+      "nome": "Luiza Sachi",
+      "email": "luiza@gmail.com",
+      "senha": "Ol@mundo123",
+      "nivelPermissao": "administrador",
+      "ativo": true,
+      "data_criacao": "02/03/2023 - 09:04:35",
+      "data_atualizacao": ;
+    }
+  ],
+}
 ```
 <br/>
 <hr>
@@ -751,7 +760,7 @@
 
 <br/>
 
-# Apagar vaga
+### Apagar vaga
 
 <br/>
 
@@ -776,7 +785,7 @@
 
 ```json
 {
-  "retorno": "Mensagem de erro conforme regras de negócios"
+  "retorno": "Vaga não cadastrada"
 }
 ```
 
@@ -784,18 +793,20 @@
 
 <br/><br/>
 
-# Tabela banco de dados
+# Campos de Requisição
 
-|      campo       |   tipo    | obrigatório | descrição |
-| :--------------: | :-------: | :---------: | ----------- |
-|        id        |    int    |     sim     | Id da vaga com auto-incremento |
-|       nome       | varchar() |     sim     | Nome da vaga |
-|      cargo       | varchar() |     sim     | Nomde do cargo |
-|      descricao       |  varchar  |     sim     | descrição do cargo |
-|  requisitos  | varchar() |     sim     | Lista de requisitos obrigatórios para a vaga |
-|      salario       |  double  |     sim     | Valor do salário |
-|   data_abertura   |   Date    |     sim     | Data da abertura da vaga |
-| data_encerramento |   Date    |     sim     | Data do encerramento da vaga |
+|         campo       |   tipo        | obrigatório | descrição |
+| :-----------------: | :-----------: | :---------: | ---------------------------------------- |
+|          id         |  numeric(10)  |     sim     | Id da vaga                               |
+|         nome        |  varchar(80)  |     sim     | Nome da vaga                             |
+|         cargo       |    varchar    |     sim     | Nomde do cargo                           |
+|       descricao     |    varchar    |     sim     | descrição do cargo                       |
+|      habilidades    | fk_habilidade |     sim     | Uma vaga pode ter várias habilidades     |
+|        salario      |  double(6,2)  |     sim     | Valor do salário                         |
+|     data_abertura   |   Datetime    |     sim     | Data da abertura da vaga                 |
+|  data_encerramento  |   Datetime    |     sim     | Data do encerramento da vaga             |
+| data_envio_feedback |   Datetime    |     sim     | Data programada para o envio do feedback |
+|       usuarios      |  fk_usuario   |     sim     | Um usuario pode ter varias vagas         |
 
 </details>
 
@@ -809,7 +820,7 @@
 
 <br/>
 
-# Cadastrar um curriculo
+### Cadastrar curriculo
 
 <br/>
 
@@ -824,7 +835,7 @@
   "vaga":
     {
       "nome": "Desenvolvedor Java"
-    }
+    },
   "feedback":
     {
       "id": 1,
@@ -886,11 +897,11 @@
 </details>
 
 <details>
-<summary> <b style="color:cyan">GET</b> /api/talentTracker/usuario</summary>
+<summary> <b style="color:cyan">GET</b> /api/talentTracker/curriculo</summary>
 
 <br/>
 
-# Listar todos os curriculos
+### Listar curriculos
 
 <br/>
 
@@ -911,7 +922,7 @@
     "vaga":
       {
         "nome": "Desenvolvedor Java"
-      }
+      },
     "feedback":
       {
         "id": 1,
@@ -932,7 +943,7 @@
     "vaga":
       {
         "nome": "Analista de Dados"
-      }
+      },
     "feedback":
       {
         "id": 2,
@@ -943,7 +954,7 @@
         "data_programada": "15/04/2023 - 18:00:00",
         "data_envio_feedback": "15/04/2023 - 18:00:00"
       }
-    }
+  }
 ]
 
 
@@ -980,7 +991,7 @@
 <details>
 <summary> <b style="color:cyan">GET</b> /api/talentTracker/curriculo/{id}</summary>
 
-# Mostrar detalhes de um curriculo
+### Detalhes um curriculo
 
 <br/>
 
@@ -992,26 +1003,26 @@
 
 ```json
 {
-    "id": 1,
-    "arquivo": "Igor.pdf",
-    "data_envio": "08/04/2023 - 09:04:35",
-    "nome_candidato": "Igor Oliveira",
-    "email_candidato": "igor@gmail.com",
-    "vaga":
-      {
-        "nome": "Desenvolvedor Java"
-      }
-    "feedback":
-      {
-        "id": 1,
-        "descricao": "Parabéns! Você foi aprovado",
-        "resultado": true,
-        "data_analise": "08/04/2023 - 09:10:35",
-        "envio": false,
-        "data_programada": "15/04/2023 - 18:00:00",
-        "data_envio_feedback": ""
-      }
-  },
+  "id": 1,
+  "arquivo": "Igor.pdf",
+  "data_envio": "08/04/2023 - 09:04:35",
+  "nome_candidato": "Igor Oliveira",
+  "email_candidato": "igor@gmail.com",
+  "vaga":
+    {
+      "nome": "Desenvolvedor Java"
+    },
+  "feedback":
+    {
+      "id": 1,
+      "descricao": "Parabéns! Você foi aprovado",
+      "resultado": true,
+      "data_analise": "08/04/2023 - 09:10:35",
+      "envio": false,
+      "data_programada": "15/04/2023 - 18:00:00",
+      "data_envio_feedback": ""
+    }
+},
 ```
 
 <br/>
@@ -1046,33 +1057,33 @@
 
 <br/>
 
-# Atualização curriculo
+### Atualizar curriculo
 
 ### Requisição:
 
 
 ```json
 {
-    "id": 1,
-    "arquivo": "Igor.pdf",
-    "data_envio": "08/04/2023 - 09:04:35",
-    "nome_candidato": "Igor Oliveira",
-    "email_candidato": "igor@gmail.com",
-    "vaga":
-      {
-        "nome": "Desenvolvedor Java"
-      }
-    "feedback":
-      {
-        "id": 1,
-        "descricao": "Parabéns! Você foi aprovado",
-        "resultado": true,
-        "data_analise": "08/04/2023 - 09:10:35",
-        "envio": true,
-        "data_programada": "15/04/2023 - 18:00:00",
-        "data_envio_feedback": "15/04/2023 - 18:00:00"
-      }
-  },
+  "id": 1,
+  "arquivo": "Igor.pdf",
+  "data_envio": "08/04/2023 - 09:04:35",
+  "nome_candidato": "Igor Oliveira",
+  "email_candidato": "igor@gmail.com",
+  "vaga":
+    {
+      "nome": "Desenvolvedor Java"
+    },
+  "feedback":
+    {
+      "id": 1,
+      "descricao": "Parabéns! Você foi aprovado",
+      "resultado": true,
+      "data_analise": "08/04/2023 - 09:10:35",
+      "envio": true,
+      "data_programada": "15/04/2023 - 18:00:00",
+      "data_envio_feedback": "15/04/2023 - 18:00:00"
+    }
+},
 ```
 <br/>
 
@@ -1086,26 +1097,26 @@
 
 ```json
 {
-    "id": 1,
-    "arquivo": "Igor.pdf",
-    "data_envio": "08/04/2023 - 09:04:35",
-    "nome_candidato": "Igor Oliveira",
-    "email_candidato": "igor@gmail.com",
-    "vaga":
-      {
-        "nome": "Desenvolvedor Java"
-      }
-    "feedback":
-      {
-        "id": 1,
-        "descricao": "Parabéns! Você foi aprovado",
-        "resultado": true,
-        "data_analise": "08/04/2023 - 09:10:35",
-        "envio": true,
-        "data_programada": "15/04/2023 - 18:00:00",
-        "data_envio_feedback": "15/04/2023 - 18:00:00"
-      }
-  },
+  "id": 1,
+  "arquivo": "Igor.pdf",
+  "data_envio": "08/04/2023 - 09:04:35",
+  "nome_candidato": "Igor Oliveira",
+  "email_candidato": "igor@gmail.com",
+  "vaga":
+    {
+      "nome": "Desenvolvedor Java"
+    },
+  "feedback":
+    {
+      "id": 1,
+      "descricao": "Parabéns! Você foi aprovado",
+      "resultado": true,
+      "data_analise": "08/04/2023 - 09:10:35",
+      "envio": true,
+      "data_programada": "15/04/2023 - 18:00:00",
+      "data_envio_feedback": "15/04/2023 - 18:00:00"
+    }
+},
 ```
 <br/>
 <hr>
@@ -1117,7 +1128,7 @@
 
 ```json
 {
-  "retorno": "{Mensagem de erro...}"
+  "retorno": "{Mensagem de erro conforme regra de negócio}"
 }
 ```
 
@@ -1128,7 +1139,7 @@
 
 <br/>
 
-# Apagar curriculo
+### Apagar curriculo
 
 <br/>
 
@@ -1153,7 +1164,7 @@
 
 ```json
 {
-  "retorno": "Mensagem de erro conforme regras de negócios"
+  "retorno": "Curriculo não cadastrado"
 }
 ```
 
@@ -1161,16 +1172,17 @@
 
 <br/><br/>
 
-# Tabela banco de dados
+# Campos de Requisição
 
-|      campo       |   tipo    | obrigatório | descrição |
-| :--------------: | :-------: | :---------: | ----------|
-|        id        |    int    |     sim     | Id do curriculo auto-incremento |
-| arquivo | blob |     sim     | Curriculo anexado |
-| data_envio | Date |     sim     | Data do envio do currículo |
-|      nome_candidato       |  varchar  |     sim     | Nome do candidato |
-|  email_candidato  | varchar() |     sim     | Email do candidato |
-|      envio_feedback       |  boolean  |     sim     | Verifica se o feedback foi enviado ou não |
-|   dt_envio   |   Date    |     sim     | Data da criação do usuario  |
+|       campo       |     tipo    | obrigatório | descrição                                 |
+| :---------------: | :---------: | :---------: | ------------------------------------------|
+|        id         |     int     |     sim     | Id do curriculo                           |
+|      arquivo      |    blob     |     sim     | Curriculo anexado                         |
+|    data_envio     |    Date     |     sim     | Data do envio do currículo                |
+|  nome_candidato   | varchar(50) |     sim     | Nome do candidato                         |
+|  email_candidato  | varchar(80) |     sim     | Email do candidato                        |
+|       vaga        |   varchar   |     sim     | Nome da vaga                              |
+|     feedback      | fk_feedback |     sim     | Verifica se o feedback foi enviado ou não |
+
 
 </details>

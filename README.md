@@ -1,4 +1,4 @@
-# TalentTracker
+# TalentScope
 
 ## Uma api para automatização de leitura de currículo e envio de feedbacks personalizados
 

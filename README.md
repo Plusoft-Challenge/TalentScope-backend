@@ -37,7 +37,7 @@
 <br>
 
 <details>
-<summary> <b style="color:green">POST</b> /api/talentTracker/usuario</summary>
+<summary> <b style="color:green">POST</b> /api/talentScope/usuario</summary>
 
 <br/>
 
@@ -97,7 +97,7 @@
 </details>
 
 <details>
-<summary> <b style="color:cyan">GET</b> /api/talentTracker/usuario</summary>
+<summary> <b style="color:cyan">GET</b> /api/talentScope/usuario</summary>
 
 <br/>
 
@@ -167,7 +167,7 @@
 </details>
 
 <details>
-<summary> <b style="color:cyan">GET</b> /api/talentTracker/usuario/{id}</summary>
+<summary> <b style="color:cyan">GET</b> /api/talentScope/usuario/{id}</summary>
 
 <br/>
 
@@ -222,7 +222,7 @@
 </details>
 
 <details>
-<summary> <b style="color:orange">UPDATE</b> /api/talentTracker/usuario/{id}</summary>
+<summary> <b style="color:orange">UPDATE</b> /api/talentScope/usuario/{id}</summary>
 
 <br/>
 
@@ -282,7 +282,7 @@
 </details>
 
 <details>
-<summary> <b style="color:red">DELETE</b> /api/talentTracker/usuario/{id}</summary>
+<summary> <b style="color:red">DELETE</b> /api/talentScope/usuario/{id}</summary>
 
 <br/>
 
@@ -340,7 +340,7 @@
 <br>
 
 <details>
-<summary> <b style="color:green">POST</b> /api/talentTracker/vaga</summary>
+<summary> <b style="color:green">POST</b> /api/talentScope/vaga</summary>
 
 <br/>
 
@@ -447,7 +447,7 @@
 </details>
 
 <details>
-<summary> <b style="color:cyan">GET</b> /api/talentTracker/vaga</summary>
+<summary> <b style="color:cyan">GET</b> /api/talentScope/vaga</summary>
 
 <br/>
 
@@ -562,7 +562,7 @@
 </details>
 
 <details>
-<summary> <b style="color:cyan">GET</b> /api/talentTracker/vaga/{id}</summary>
+<summary> <b style="color:cyan">GET</b> /api/talentScope/vaga/{id}</summary>
 <br/>
 
 ### Detalhar uma vaga
@@ -640,7 +640,7 @@
 </details>
 
 <details>
-<summary> <b style="color:orange">UPDATE</b> /api/talentTracker/vaga/{id}</summary>
+<summary> <b style="color:orange">UPDATE</b> /api/talentScope/vaga/{id}</summary>
 
 <br/>
 
@@ -758,7 +758,7 @@
 </details>
 
 <details>
-<summary> <b style="color:red">DELETE</b> /api/talentTracker/vaga/{id}</summary>
+<summary> <b style="color:red">DELETE</b> /api/talentScope/vaga/{id}</summary>
 
 <br/>
 
@@ -818,7 +818,7 @@
 <br>
 
 <details>
-<summary> <b style="color:green">POST</b> /api/talentTracker/curriculo</summary>
+<summary> <b style="color:green">POST</b> /api/talentScope/curriculo</summary>
 
 <br/>
 
@@ -899,7 +899,7 @@
 </details>
 
 <details>
-<summary> <b style="color:cyan">GET</b> /api/talentTracker/curriculo</summary>
+<summary> <b style="color:cyan">GET</b> /api/talentScope/curriculo</summary>
 
 <br/>
 
@@ -991,7 +991,7 @@
 </details>
 
 <details>
-<summary> <b style="color:cyan">GET</b> /api/talentTracker/curriculo/{id}</summary>
+<summary> <b style="color:cyan">GET</b> /api/talentScope/curriculo/{id}</summary>
 
 ### Detalhes um curriculo
 
@@ -1055,7 +1055,7 @@
 </details>
 
 <details>
-<summary> <b style="color:orange">UPDATE</b> /api/talentTracker/curriculo/{id}</summary>
+<summary> <b style="color:orange">UPDATE</b> /api/talentScope/curriculo/{id}</summary>
 
 <br/>
 
@@ -1137,7 +1137,7 @@
 </details>
 
 <details>
-<summary> <b style="color:red">DELETE</b> /api/talentTracker/curriculo/{id}</summary>
+<summary> <b style="color:red">DELETE</b> /api/talentScope/curriculo/{id}</summary>
 
 <br/>
 

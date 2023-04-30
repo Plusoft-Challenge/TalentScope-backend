@@ -13,6 +13,15 @@
 
 <br/>
 
+- > <h2>Nivel de Permissao</h2>
+  - [Cadastrar](#nivel-de-permissao)
+  - [Listar todas](#listar-niveis-de-permissoes)
+  - [Mostrar detalhes](#detalhar-um-nivel-de-permissao)
+  - [Atualizar](#atualizar-nivel-de-permissao)
+  - [Apagar](#apagar-nivel-de-permissao)
+
+<br/>
+
 - > <h2>Vaga</h2>
   - [Cadastrar](#cadastrar-vaga)
   - [Listar todas](#listar-vagas)
@@ -37,7 +46,7 @@
 <br>
 
 <details>
-<summary> <b style="color:green">POST</b> /api/talentTracker/usuario</summary>
+<summary> <b style="color:green">POST</b> /api/talentScope/usuario</summary>
 
 <br/>
 
@@ -51,11 +60,16 @@
 {
   "nome": "Luiza Sachi",
   "email": "luiza@gmail.com",
-  "senha": "Ol@mundo123",
-  "nivelPermissao": "administrador",
-  "ativo": true,
-  "data_criacao": "08/04/2023 - 09:04:35",
-  "data_atualizacao":
+    "senha": "Ol@mundo123",
+    "nivel_permissao":
+      {
+        "id": 1,
+        "nome": "Administrador",
+        "descricao": "Usuário com permissão master"
+       },
+    "ativo": true,
+    "data_criacao": "02/03/2023 - 09:04:35",
+    "data_atualizacao":
 }
 ```
 
@@ -73,9 +87,14 @@
   "nome": "Luiza Sachi",
   "email": "luiza@gmail.com",
   "senha": "Ol@mundo123",
-  "nivelPermissao": "administrador",
+  "nivel_permissao":
+    {
+      "id": 1,
+      "nome": "Administrador",
+      "descricao": "Usuário com permissão master"
+    },
   "ativo": true,
-  "data_criacao": "08/04/2023 - 09:04:35",
+  "data_criacao": "02/03/2023 - 09:04:35",
   "data_atualizacao":
 }
 ```
@@ -97,7 +116,7 @@
 </details>
 
 <details>
-<summary> <b style="color:cyan">GET</b> /api/talentTracker/usuario</summary>
+<summary> <b style="color:cyan">GET</b> /api/talentScope/usuario</summary>
 
 <br/>
 
@@ -118,7 +137,12 @@
     "nome": "Luiza Sachi",
     "email": "luiza@gmail.com",
     "senha": "Ol@mundo123",
-    "nivelPermissao": "administrador",
+    "nivel_permissao":
+      {
+        "id": 1,
+        "nome": "Administrador",
+        "descricao": "Usuário com permissão master"
+       },
     "ativo": true,
     "data_criacao": "02/03/2023 - 09:04:35",
     "data_atualizacao":
@@ -128,7 +152,12 @@
     "nome": "Nicolas Almeida",
     "email": "nicolas@gmail.com",
     "senha": "nialmeida*10",
-    "nivelPermissao": "administrador",
+    "nivel_permissao":
+      {
+        "id": 2,
+        "nome": "Nivel-1",
+        "descricao": "Usuário com permissão de visualização total e envio de feedback"
+       },
     "ativo": true,
     "data_criacao": "10/04/2023 - 15:25:20",
     "data_atualizacao":
@@ -167,7 +196,7 @@
 </details>
 
 <details>
-<summary> <b style="color:cyan">GET</b> /api/talentTracker/usuario/{id}</summary>
+<summary> <b style="color:cyan">GET</b> /api/talentScope/usuario/{id}</summary>
 
 <br/>
 
@@ -187,7 +216,12 @@
   "nome": "Luiza Sachi",
   "email": "luiza@gmail.com",
   "senha": "Ol@mundo123",
-  "nivelPermissao": "administrador",
+  "nivel_permissao":
+    {
+      "id": 1,
+      "nome": "Administrador",
+      "descricao": "Usuário com permissão master"
+    },
   "ativo": true,
   "data_criacao": "02/03/2023 - 09:04:35",
   "data_atualizacao":
@@ -222,7 +256,7 @@
 </details>
 
 <details>
-<summary> <b style="color:orange">UPDATE</b> /api/talentTracker/usuario/{id}</summary>
+<summary> <b style="color:orange">UPDATE</b> /api/talentScope/usuario/{id}</summary>
 
 <br/>
 
@@ -233,14 +267,21 @@
 
 ```json
 {
+  {
   "id": 1,
   "nome": "Luiza Sachi",
   "email": "luiza.sachi@gmail.com",
   "senha": "Ol@mundo123",
-  "nivelPermissao": "administrador",
+  "nivel_permissao":
+    {
+      "id": 1,
+      "nome": "Administrador",
+      "descricao": "Usuário com permissão master"
+    },
   "ativo": true,
   "data_criacao": "02/03/2023 - 09:04:35",
   "data_atualizacao": "05/04/2023 - 14:45:10"
+}
 },
 ```
 <br/>
@@ -259,7 +300,12 @@
   "nome": "Luiza Sachi",
   "email": "luiza.sachi@gmail.com",
   "senha": "Ol@mundo123",
-  "nivel_permissao": "administrador",
+  "nivel_permissao":
+    {
+      "id": 1,
+      "nome": "Administrador",
+      "descricao": "Usuário com permissão master"
+    },
   "ativo": true,
   "data_criacao": "02/03/2023 - 09:04:35",
   "data_atualizacao": "05/04/2023 - 14:45:10"
@@ -282,7 +328,7 @@
 </details>
 
 <details>
-<summary> <b style="color:red">DELETE</b> /api/talentTracker/usuario/{id}</summary>
+<summary> <b style="color:red">DELETE</b> /api/talentScope/usuario/{id}</summary>
 
 <br/>
 
@@ -323,14 +369,278 @@
 
 |       campo       |     tipo    | obrigatório | descrição                                                                                                  |
 | :---------------: | :---------: | :---------: | ---------------------------------------------------------------------------------------------------------- |
-|        id         | numeric(10) |     sim     | Id da conta                                                                                                |
-|       nome        | varchar(80) |     sim     | Nome do usuario                                                                                            |
-|       email       | varchar(80) |     sim     | Email do usuario                                                                                           |
-|       senha       | varchar(15) |     sim     | Senha do usuario. Senha deve conter de 8 a 15 caracteres, no min. 1 letra maiuscula e 1 caractere especial |
-|  nivel_permissao  | varchar(20) |     sim     | Nivel de permissão para utilizar a plataforma                                                              |
+|        id         |    numeric(10)     |     sim     | Id do usuario                                                                                       |
+|       nome        |    varchar(80)     |     sim     | Nome do usuario                                                                                     |
+|       email       |    varchar(80)     |     sim     | Email do usuario                                                                                    
+|       senha       |    varchar(15)     |     sim     | Senha do usuario. Senha deve conter de 8 a 15 caracteres, no min. 1 letra maiuscula e 1 caractere especial|
+|  nivel_permissao  | fk_nivel_permissao |     sim     | Nivel de permissão para utilizar a plataforma                                                       |
 |       ativo       | Boolean(1)  |     sim     | Flag para informar se o usuario esta ativo na plataforma                                                   |
 |   data_criacao    |  Datetime   |     sim     | Data da criação do usuario                                                                                 |
 | data_atualizacao  |  Datetime   |     nao     | Data da atualização do usuario                                                                             |
+
+</details>
+
+<details>
+<summary>Nivel de Permissão</summary>
+
+<br>
+
+<details>
+<summary> <b style="color:green">POST</b> /api/talentScope/nivelPermissao</summary>
+
+<br/>
+
+### Cadastrar nivel de permissao
+
+<br/>
+
+### Requisição:
+
+```json
+{
+  "nome": "Administrador",
+  "descricao": "Usuário com permissão master"
+}
+```
+
+<br/>
+
+### Responses:
+
+`status code: 200`
+
+#### Body: <b>Application/json</b>
+
+```json
+{
+  "id": 1,
+  "nome": "Administrador",
+  "descricao": "Usuário com permissão master"
+}
+```
+
+<br/>
+<hr>
+
+`status code: 400`
+
+#### Body: <b>Application/json</b>
+
+```json
+{
+  "retorno": "Mensagem de erro conforme regras de negócios"
+}
+```
+
+<br/>
+</details>
+
+<details>
+<summary> <b style="color:cyan">GET</b> /api/talentScope/nivelPermissao</summary>
+
+<br/>
+
+### Listar niveis de permissoes
+
+<br/>
+
+### Responses:
+
+`status code: 200`
+
+#### Body: <b>Application/json</b>
+
+```json
+[
+  {
+    "id": 1,
+    "nome": "Administrador",
+    "descricao": "Usuário com permissão master"
+  },
+  {
+    "id": 2,
+    "nome": "Nivel-1",
+    "descricao": "Usuário com permissão de visualização total e envio de feedback"
+  }
+]
+
+
+```
+
+<br/>
+<hr>
+
+`status code: 204`
+
+#### Body: <b>Application/json</b>
+
+```json
+{
+  "retorno": "Não há nivel de permissao para retornar"
+}
+```
+
+<br/>
+<hr>
+
+`status code: 400`
+
+#### Body: <b>Application/json</b>
+
+```json
+{
+  "retorno": "Mensagem de erro conforme regras de negócios"
+}
+```
+
+</details>
+
+<details>
+<summary> <b style="color:cyan">GET</b> /api/talentScope/nivelPermissao/{id}</summary>
+
+<br/>
+
+### Detalhar um nivel de permissao
+
+<br/>
+
+### Responses:
+
+`status code: 200`
+
+#### Body: <b>Application/json</b>
+
+```json
+{
+  "id": 1,
+  "nome": "Administrador",
+  "descricao": "Usuário com permissão master"
+}
+```
+
+<br/>
+<hr>
+
+`status code: 204`
+
+#### Body: <b>Application/json</b>
+
+```json
+{
+  "retorno": "Nivel de permissao não cadastrado"
+}
+```
+
+<br/>
+<hr>
+
+`status code: 400`
+
+
+```json
+{
+  "retorno": "Mensagem de erro conforme regras de negócios"
+}
+```
+
+</details>
+
+<details>
+<summary> <b style="color:orange">UPDATE</b> /api/talentScope/nivelPermissao/{id}</summary>
+
+<br/>
+
+### Atualizar nivel de permissao
+
+### Requisição:
+
+
+```json
+{
+  "id": 1,
+  "nome": "Administrador geral",
+  "descricao": "Usuário com permissão master"
+},
+```
+<br/>
+
+<br/>
+
+### Responses:
+
+`status code: 200`
+
+#### Tipo do body: <b>Application/json</b>
+
+```json
+{
+  "id": 1,
+  "nome": "Administrador geral",
+  "descricao": "Usuário com permissão master"
+}
+```
+<br/>
+<hr>
+
+`status code: 400`
+
+#### Body: <b>Application/json</b>
+
+
+```json
+{
+  "retorno": "{Mensagem de erro conforme regra de negocio}"
+}
+```
+
+</details>
+
+<details>
+<summary> <b style="color:red">DELETE</b> /api/talentScope/nivelPermissao/{id}</summary>
+
+<br/>
+
+### Apagar nivel de permissao
+
+<br/>
+
+### Responses:
+
+`status code: 200`
+
+#### Body: <b>Application/json</b>
+
+```json
+{
+  "retorno": "Nivel de permissao apagado com sucesso"
+}
+```
+
+<br/>
+<hr>
+
+`status code: 400`
+
+#### Body: <b>Application/json</b>
+
+```json
+{
+  "retorno": "Nivel de permissao não cadastrado"
+}
+```
+
+</details>
+
+<br/><br/>
+
+# Campos de Requisição
+
+|       campo       |     tipo     | obrigatório | descrição                         |
+| :---------------: | :----------: | :---------: | ----------------------------------|
+|        id         | numeric(3)   |     sim     | Id do nivel de permissao          |
+|       nome        | varchar(30)  |     sim     | Nome do usuario                   |
+|     descricao     | varchar(250) |     sim     | Descrição do nivel de permissão   |
+
 
 </details>
 
@@ -340,7 +650,7 @@
 <br>
 
 <details>
-<summary> <b style="color:green">POST</b> /api/talentTracker/vaga</summary>
+<summary> <b style="color:green">POST</b> /api/talentScope/vaga</summary>
 
 <br/>
 
@@ -377,7 +687,12 @@
       "nome": "Luiza Sachi",
       "email": "luiza@gmail.com",
       "senha": "Ol@mundo123",
-      "nivelPermissao": "administrador",
+      "nivel_permissao":
+        {
+          "id": 1,
+          "nome": "Administrador",
+          "descricao": "Usuário com permissão master"
+        },
       "ativo": true,
       "data_criacao": "02/03/2023 - 09:04:35",
       "data_atualizacao":
@@ -421,7 +736,12 @@
       "nome": "Luiza Sachi",
       "email": "luiza@gmail.com",
       "senha": "Ol@mundo123",
-      "nivelPermissao": "administrador",
+      "nivel_permissao":
+        {
+          "id": 1,
+          "nome": "Administrador",
+          "descricao": "Usuário com permissão master"
+        },
       "ativo": true,
       "data_criacao": "02/03/2023 - 09:04:35",
       "data_atualizacao":
@@ -447,7 +767,7 @@
 </details>
 
 <details>
-<summary> <b style="color:cyan">GET</b> /api/talentTracker/vaga</summary>
+<summary> <b style="color:cyan">GET</b> /api/talentScope/vaga</summary>
 
 <br/>
 
@@ -476,7 +796,7 @@
       }
       {
         "id":2,
-        "habilidade": "ActiveMQ"
+        "habilidade": "ActiveMQ",
         "descricao": "Saber manipular objetos com mensageria"
       }
     ],
@@ -490,12 +810,17 @@
         "nome": "Luiza Sachi",
         "email": "luiza@gmail.com",
         "senha": "Ol@mundo123",
-        "nivelPermissao": "administrador",
+        "nivel_permissao":
+          {
+            "id": 1,
+            "nome": "Administrador",
+            "descricao": "Usuário com permissão master"
+          },
         "ativo": true,
         "data_criacao": "02/03/2023 - 09:04:35",
         "data_atualizacao":
       }
-    ],
+    ]
   }
   {
     "id": 2,
@@ -510,7 +835,7 @@
       }
       {
         "id":2,
-        "habilidade": "SQL"
+        "habilidade": "SQL",
         "descricao": "Saber manipular objetos com SQL"
       }
     ],
@@ -519,14 +844,23 @@
     "data_encerramento": "15/07/2023 - 17:00:00",
     "data_envio_feedback": "15/04/2023 - 17:00:00",
     {
-      "id": 2,
-      "nome": "Nicolas Almeida",
-      "email": "nicolas@gmail.com",
-      "senha": "nialmeida*10",
-      "nivelPermissao": "administrador",
-      "ativo": true,
-      "data_criacao": "10/04/2023 - 15:25:20",
-      "data_atualizacao":
+      "usuario": [
+        {
+          "id": 2,
+          "nome": "Nicolas Almeida",
+          "email": "nicolas@gmail.com",
+          "senha": "nialmeida*10",
+          "nivel_permissao":
+            {
+              "id": 2,
+              "nome": "Nivel-1",
+              "descricao": "Usuário com permissão de visualização total e envio de feedback"
+            },
+          "ativo": true,
+          "data_criacao": "10/04/2023 - 15:25:20",
+          "data_atualizacao":
+        }
+      ]
     }
   }
 ]
@@ -562,7 +896,7 @@
 </details>
 
 <details>
-<summary> <b style="color:cyan">GET</b> /api/talentTracker/vaga/{id}</summary>
+<summary> <b style="color:cyan">GET</b> /api/talentScope/vaga/{id}</summary>
 <br/>
 
 ### Detalhar uma vaga
@@ -589,7 +923,7 @@
     }
     {
       "id":2,
-      "habilidade": "ActiveMQ"
+      "habilidade": "ActiveMQ",
       "descricao": "Saber manipular objetos com mensageria"
     }
   ],
@@ -603,12 +937,17 @@
       "nome": "Luiza Sachi",
       "email": "luiza@gmail.com",
       "senha": "Ol@mundo123",
-      "nivelPermissao": "administrador",
+      "nivel_permissao":
+        {
+          "id": 1,
+          "nome": "Administrador",
+          "descricao": "Usuário com permissão master"
+         },
       "ativo": true,
       "data_criacao": "02/03/2023 - 09:04:35",
       "data_atualizacao":
     }
-  ],
+  ]
 }
 ```
 
@@ -640,7 +979,7 @@
 </details>
 
 <details>
-<summary> <b style="color:orange">UPDATE</b> /api/talentTracker/vaga/{id}</summary>
+<summary> <b style="color:orange">UPDATE</b> /api/talentScope/vaga/{id}</summary>
 
 <br/>
 
@@ -682,12 +1021,17 @@
       "nome": "Luiza Sachi",
       "email": "luiza@gmail.com",
       "senha": "Ol@mundo123",
-      "nivelPermissao": "administrador",
+      "nivel_permissao":
+        {
+          "id": 1,
+          "nome": "Administrador",
+          "descricao": "Usuário com permissão master"
+       },
       "ativo": true,
       "data_criacao": "02/03/2023 - 09:04:35",
       "data_atualizacao":
     }
-  ],
+  ]
  }
 ```
 <br/>
@@ -733,12 +1077,17 @@
       "nome": "Luiza Sachi",
       "email": "luiza@gmail.com",
       "senha": "Ol@mundo123",
-      "nivelPermissao": "administrador",
+      "nivel_permissao":
+        {
+          "id": 1,
+          "nome": "Administrador",
+          "descricao": "Usuário com permissão master"
+        },
       "ativo": true,
       "data_criacao": "02/03/2023 - 09:04:35",
       "data_atualizacao":
     }
-  ],
+  ]
 }
 ```
 <br/>
@@ -758,7 +1107,7 @@
 </details>
 
 <details>
-<summary> <b style="color:red">DELETE</b> /api/talentTracker/vaga/{id}</summary>
+<summary> <b style="color:red">DELETE</b> /api/talentScope/vaga/{id}</summary>
 
 <br/>
 
@@ -818,7 +1167,7 @@
 <br>
 
 <details>
-<summary> <b style="color:green">POST</b> /api/talentTracker/curriculo</summary>
+<summary> <b style="color:green">POST</b> /api/talentScope/curriculo</summary>
 
 <br/>
 
@@ -868,7 +1217,7 @@
   "vaga":
     {
       "nome": "Desenvolvedor Java"
-    }
+    },
   "feedback":
     {
       "id": 1,
@@ -899,7 +1248,7 @@
 </details>
 
 <details>
-<summary> <b style="color:cyan">GET</b> /api/talentTracker/curriculo</summary>
+<summary> <b style="color:cyan">GET</b> /api/talentScope/curriculo</summary>
 
 <br/>
 
@@ -991,7 +1340,7 @@
 </details>
 
 <details>
-<summary> <b style="color:cyan">GET</b> /api/talentTracker/curriculo/{id}</summary>
+<summary> <b style="color:cyan">GET</b> /api/talentScope/curriculo/{id}</summary>
 
 ### Detalhes um curriculo
 
@@ -1055,7 +1404,7 @@
 </details>
 
 <details>
-<summary> <b style="color:orange">UPDATE</b> /api/talentTracker/curriculo/{id}</summary>
+<summary> <b style="color:orange">UPDATE</b> /api/talentScope/curriculo/{id}</summary>
 
 <br/>
 
@@ -1137,7 +1486,7 @@
 </details>
 
 <details>
-<summary> <b style="color:red">DELETE</b> /api/talentTracker/curriculo/{id}</summary>
+<summary> <b style="color:red">DELETE</b> /api/talentScope/curriculo/{id}</summary>
 
 <br/>
 

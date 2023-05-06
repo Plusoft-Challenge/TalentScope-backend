@@ -1,11 +1,14 @@
-package br.com.TalentTracker.models;
+package br.com.TalentScope.models;
 
+import java.sql.Blob;
 import java.time.LocalDateTime;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 import lombok.AllArgsConstructor;
@@ -16,22 +19,26 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class Feedback {
+public class Curriculo {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
-  @NotNull
-  private String feedback;
-
-  private Boolean aprovado;
+  @NotEmpty
+  private Blob arquivo;
 
   @NotNull
-  private LocalDateTime dtAnalise;
+  private LocalDateTime dtEnvioCurriculo;
 
   @NotNull
-  private Boolean envioFeedback;
+  @Max(value = 80)
+  private String nomeCandidato;
 
-  private LocalDateTime dtEnvioFeedback;
+  @NotNull
+  @Max(value = 80)
+  private String email;
+
+  // private Feedback feedback;
+  // private Vaga vaga;
 }

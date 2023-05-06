@@ -1,4 +1,4 @@
-package br.com.TalentTracker.controllers;
+package br.com.TalentScope.controllers;
 
 import java.io.InputStream;
 import java.util.HashMap;

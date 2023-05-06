@@ -1,4 +1,4 @@
-package br.com.TalentTracker.models;
+package br.com.TalentScope.models;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

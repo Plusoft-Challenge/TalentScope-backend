@@ -1,10 +1,10 @@
-package br.com.TalentTracker;
+package br.com.TalentScope;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class TalentTrackerApplicationTests {
+class TalentScopeApplicationTests {
 
 	@Test
 	void contextLoads() {

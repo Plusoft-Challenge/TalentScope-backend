@@ -1,8 +1,8 @@
-package br.com.TalentTracker.repository;
+package br.com.TalentScope.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import br.com.TalentTracker.models.Usuario;
+import br.com.TalentScope.models.Usuario;
 
 public interface UsuariosRepository extends JpaRepository<Usuario, Long>{
   

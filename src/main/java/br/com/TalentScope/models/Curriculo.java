@@ -7,38 +7,85 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.Max;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 
 @Entity
-@NoArgsConstructor
-@AllArgsConstructor
-@Data
 public class Curriculo {
 
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 
-  @NotEmpty
-  private Blob arquivo;
+	@NotEmpty
+	private String arquivo;
 
-  @NotNull
-  private LocalDateTime dtEnvioCurriculo;
+	@NotNull
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+	private LocalDateTime dtEnvioCurriculo;
 
-  @NotNull
-  @Max(value = 80)
-  private String nomeCandidato;
+	@NotNull
+	private String nomeCandidato;
 
-  @NotNull
-  @Max(value = 80)
-  private String email;
+	@NotNull
+	private String email;
 
-  // private Feedback feedback;
-  // private Vaga vaga;
+	// private Feedback feedback;
+	// private Vaga vaga;
+
+	public Curriculo() {
+	}
+
+	public Curriculo(String arquivo, LocalDateTime dtEnvioCurriculo, String nomeCandidato,
+			String email) {
+		super();
+		this.arquivo = arquivo;
+		this.dtEnvioCurriculo = dtEnvioCurriculo;
+		this.nomeCandidato = nomeCandidato;
+		this.email = email;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getArquivo() {
+		return arquivo;
+	}
+
+	public void setArquivo(String arquivo) {
+		this.arquivo = arquivo;
+	}
+
+	public LocalDateTime getDtEnvioCurriculo() {
+		return dtEnvioCurriculo;
+	}
+
+	public void setDtEnvioCurriculo(LocalDateTime dtEnvioCurriculo) {
+		this.dtEnvioCurriculo = dtEnvioCurriculo;
+	}
+
+	public String getNomeCandidato() {
+		return nomeCandidato;
+	}
+
+	public void setNomeCandidato(String nomeCandidato) {
+		this.nomeCandidato = nomeCandidato;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 }

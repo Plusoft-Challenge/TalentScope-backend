@@ -4,15 +4,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.Max;
 import javax.validation.constraints.NotNull;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
 @Entity
-public class NivelPermissao {
+public class Habilidade {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,16 +16,11 @@ public class NivelPermissao {
 	@NotNull
 	private String nome;
 
-	@NotNull
-	private String descricao;
-
-	public NivelPermissao() {
+	public Habilidade() {
 	}
 
-	public NivelPermissao(String nome, String descricao) {
-		super();
+	public Habilidade(String nome) {
 		this.nome = nome;
-		this.descricao = descricao;
 	}
 
 	public Long getId() {
@@ -47,14 +37,6 @@ public class NivelPermissao {
 
 	public void setNome(String nome) {
 		this.nome = nome;
-	}
-
-	public String getDescricao() {
-		return descricao;
-	}
-
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
 	}
 
 }

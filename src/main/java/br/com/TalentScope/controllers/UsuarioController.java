@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.TalentScope.exception.RestNotFoundException;
 import br.com.TalentScope.models.Usuario;
-import br.com.TalentScope.repository.UsuariosRepository;
+import br.com.TalentScope.repository.UsuarioRepository;
 
 @RestController
 @RequestMapping("talentScope/usuarios")
@@ -29,7 +29,7 @@ public class UsuarioController {
   Logger log = LoggerFactory.getLogger(UsuarioController.class);
 
   @Autowired
-  UsuariosRepository repository;
+  UsuarioRepository repository;
 
   @GetMapping
   public List<Usuario> getAll(){

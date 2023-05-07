@@ -11,39 +11,105 @@ import javax.validation.constraints.Digits;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.NotNull;
 
-
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
-@NoArgsConstructor
-@AllArgsConstructor
-@Data
 public class Vaga {
 
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 
-  @NotNull
-  @Max(value = 80)
-  private String nome;
+	@NotNull
+	private String nome;
 
-  @NotNull
-  private String descricaoCargo;
+	@NotNull
+	private String descricaoCargo;
 
-  @NotNull
-  @Digits(integer = 6, fraction = 2)
-  private BigDecimal salario;
+	@NotNull
+	@Digits(integer = 6, fraction = 2)
+	private BigDecimal salario;
 
-  @NotNull
-  private LocalDateTime dtAbertura;
+	@NotNull
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+	private LocalDateTime dtAbertura;
 
-  @NotNull
-  private LocalDateTime dtEncerramento;
+	@NotNull
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+	private LocalDateTime dtEncerramento;
 
-  private LocalDateTime dtProgramacaoEnvio;
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+	private LocalDateTime dtProgEnvioFeedback;
 
-  // private Usuario usuario;
+	// private Usuario usuario;
+
+	public Vaga() {
+	}
+
+	public Vaga(String nome, String descricaoCargo, BigDecimal salario, LocalDateTime dtAbertura,
+			LocalDateTime dtEncerramento, LocalDateTime dtProgramacaoEnvio) {
+		this.nome = nome;
+		this.descricaoCargo = descricaoCargo;
+		this.salario = salario;
+		this.dtAbertura = dtAbertura;
+		this.dtEncerramento = dtEncerramento;
+		this.dtProgEnvioFeedback = dtProgramacaoEnvio;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public String getDescricaoCargo() {
+		return descricaoCargo;
+	}
+
+	public void setDescricaoCargo(String descricaoCargo) {
+		this.descricaoCargo = descricaoCargo;
+	}
+
+	public BigDecimal getSalario() {
+		return salario;
+	}
+
+	public void setSalario(BigDecimal salario) {
+		this.salario = salario;
+	}
+
+	public LocalDateTime getDtAbertura() {
+		return dtAbertura;
+	}
+
+	public void setDtAbertura(LocalDateTime dtAbertura) {
+		this.dtAbertura = dtAbertura;
+	}
+
+	public LocalDateTime getDtEncerramento() {
+		return dtEncerramento;
+	}
+
+	public void setDtEncerramento(LocalDateTime dtEncerramento) {
+		this.dtEncerramento = dtEncerramento;
+	}
+
+	public LocalDateTime getDtProgramacaoEnvio() {
+		return dtProgEnvioFeedback;
+	}
+
+	public void setDtProgramacaoEnvio(LocalDateTime dtProgramacaoEnvio) {
+		this.dtProgEnvioFeedback = dtProgramacaoEnvio;
+	}
+
 }

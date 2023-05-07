@@ -1,6 +1,5 @@
 package br.com.TalentScope.models;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import javax.persistence.Entity;
@@ -8,8 +7,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -24,12 +21,12 @@ public class Usuario {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@NotBlank
-	@Length(min = 3, max = 80, message = "O nome deverá ter no maximo {max} caractteres")
+	@NotNull
+	@Length(min = 3, max = 80, message = "O nome deverá ter no min. {min} e max. {max} caracteres")
 	private String nome;
 
-	@NotEmpty
-	@Email(message = "Email is not valid", regexp = "^[a-zA-Z0-9_!#$%&'*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$")
+	@NotNull
+	@Email(message = "Email não está valido", regexp = "^[a-zA-Z0-9_!#$%&'*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$")
 	private String email;
 
 	@NotNull
@@ -51,7 +48,6 @@ public class Usuario {
 
 	public Usuario(String nome, String email, String senha, Boolean status, LocalDateTime dtCriacao,
 			LocalDateTime dtAlteracao) {
-		super();
 		this.nome = nome;
 		this.email = email;
 		this.senha = senha;

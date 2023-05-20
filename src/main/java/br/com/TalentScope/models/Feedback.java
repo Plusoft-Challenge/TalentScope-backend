@@ -6,15 +6,21 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+@EqualsAndHashCode(of = "id")
 public class Feedback {
 
 	@Id
@@ -36,65 +42,6 @@ public class Feedback {
 	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
 	private LocalDateTime dtEnvioFeedback;
 
-	public Feedback() {
-	}
-
-	public Feedback(String feedback, Boolean aprovado, LocalDateTime dtAnalise, Boolean envioFeedback,
-			LocalDateTime dtEnvioFeedback) {
-		super();
-		this.feedback = feedback;
-		this.aprovado = aprovado;
-		this.dtAnalise = dtAnalise;
-		this.envioFeedback = envioFeedback;
-		this.dtEnvioFeedback = dtEnvioFeedback;
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getFeedback() {
-		return feedback;
-	}
-
-	public void setFeedback(String feedback) {
-		this.feedback = feedback;
-	}
-
-	public Boolean getAprovado() {
-		return aprovado;
-	}
-
-	public void setAprovado(Boolean aprovado) {
-		this.aprovado = aprovado;
-	}
-
-	public LocalDateTime getDtAnalise() {
-		return dtAnalise;
-	}
-
-	public void setDtAnalise(LocalDateTime dtAnalise) {
-		this.dtAnalise = dtAnalise;
-	}
-
-	public Boolean getEnvioFeedback() {
-		return envioFeedback;
-	}
-
-	public void setEnvioFeedback(Boolean envioFeedback) {
-		this.envioFeedback = envioFeedback;
-	}
-
-	public LocalDateTime getDtEnvioFeedback() {
-		return dtEnvioFeedback;
-	}
-
-	public void setDtEnvioFeedback(LocalDateTime dtEnvioFeedback) {
-		this.dtEnvioFeedback = dtEnvioFeedback;
-	}
-
+	@OneToOne
+	private Curriculo curriculo;
 }

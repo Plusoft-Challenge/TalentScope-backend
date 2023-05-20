@@ -28,4 +28,9 @@ public class NivelPermissao {
 	@NotNull
 	private String descricao;
 
+	public NivelPermissao(@NotNull String nome, @NotNull String descricao) {
+		this.nome = nome;
+		this.descricao = descricao;
+	}
+
 }

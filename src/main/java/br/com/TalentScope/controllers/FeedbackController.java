@@ -26,10 +26,10 @@ import br.com.TalentScope.repository.FeedbackRepository;
 @RequestMapping("talentScope/feedback")
 public class FeedbackController {
 	Logger log = LoggerFactory.getLogger(FeedbackController.class);
-	
+
 	@Autowired
 	FeedbackRepository repository;
-	
+
 	@GetMapping
 	  public List<Feedback> getAll(){
 	    return repository.findAll();
@@ -37,36 +37,36 @@ public class FeedbackController {
 
 	  @PostMapping
 	  public ResponseEntity<Feedback> create(@RequestBody @Valid Feedback feedback){
-	    log.info("Cadastrando usuario: " + feedback);
+	    log.info("Cadastrando feedback: " + feedback);
 
 	    repository.save(feedback);
 	    return ResponseEntity.status(HttpStatus.CREATED).body(feedback);
 	  }
-	  
+
 	  @GetMapping("{id}")
 	  public ResponseEntity<Feedback> findById(@PathVariable Long id){
-		  log.info("Buscando usuario com id " + id);
+		  log.info("Buscando feedback com id " + id);
 		  var feedback = getFeedback(id);
 		  return ResponseEntity.ok(feedback);
 	  }
-	  
+
 	  @DeleteMapping("{id}")
 	  public ResponseEntity<Feedback> delete(@PathVariable Long id){
-		  log.info("Apagando usuario com o id " + id);
+		  log.info("Apagando feedback com o id " + id);
 		  var feedback = getFeedback(id);
 		  repository.delete(feedback);
 		  return ResponseEntity.noContent().build();
 	  }
-	  
+
 	  @PutMapping("{id}")
 	  public ResponseEntity<Feedback> update(@PathVariable Long id, @RequestBody @Valid Feedback feedback){
-		  log.info("Atualizando usuario com o id " + id);
+		  log.info("Atualizando feedback com o id " + id);
 		  getFeedback(id);
 		  feedback.setId(id);
 		  repository.save(feedback);
 		  return ResponseEntity.ok(feedback);
 	  }
-	  
+
 	  private Feedback getFeedback(Long id) {
 		  return repository.findById(id)
 				  .orElseThrow(() -> new RestNotFoundException("feedback não encontrado"));

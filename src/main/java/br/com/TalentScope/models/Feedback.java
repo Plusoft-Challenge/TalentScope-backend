@@ -38,10 +38,17 @@ public class Feedback {
 
 	@NotNull
 	private Boolean envioFeedback;
-	
+
 	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
 	private LocalDateTime dtEnvioFeedback;
 
-	@OneToOne
-	private Curriculo curriculo;
+	public Feedback(String feedback, Boolean aprovado, LocalDateTime dtAnalise,
+			Boolean envioFeedback, LocalDateTime dtEnvioFeedback) {
+		this.feedback = feedback;
+		this.aprovado = aprovado;
+		this.dtAnalise = dtAnalise;
+		this.envioFeedback = envioFeedback;
+		this.dtEnvioFeedback = dtEnvioFeedback;
+	}
+	
 }

@@ -56,4 +56,15 @@ public class Usuario {
 	@ManyToOne
 	private NivelPermissao nivelPermissao;
 
+	public Usuario(
+			String nome, String email, String senha, Boolean status, LocalDateTime dtCriacao, LocalDateTime dtAlteracao) {
+		this.nome = nome;
+		this.email = email;
+		this.senha = senha;
+		this.status = status;
+		this.dtCriacao = dtCriacao;
+		this.dtAlteracao = dtAlteracao;
+	}
+
+	
 }

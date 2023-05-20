@@ -27,9 +27,9 @@ public class Habilidade {
 
 	@NotNull
 	private String nome;
-	
-	@ManyToMany
-	private List<Vaga> vagas;
 
+	public Habilidade(String nome) {
+		this.nome = nome;
+	}
 
 }

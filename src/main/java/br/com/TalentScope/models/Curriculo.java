@@ -2,6 +2,7 @@ package br.com.TalentScope.models;
 
 import java.time.LocalDateTime;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -42,8 +43,21 @@ public class Curriculo {
 
 	@NotNull
 	private String email;
-	
+
 	@ManyToOne
 	private Vaga vaga;
+
+	@OneToOne(cascade = {CascadeType.MERGE})
+	private Feedback feedback;
+
+	public Curriculo(String arquivo, LocalDateTime dtEnvioCurriculo, String nomeCandidato, String email, Feedback feedback) {
+		this.arquivo = arquivo;
+		this.dtEnvioCurriculo = dtEnvioCurriculo;
+		this.nomeCandidato = nomeCandidato;
+		this.email = email;
+		this.feedback = feedback;
+	}
+
+	
 
 }

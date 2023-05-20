@@ -58,5 +58,15 @@ public class Vaga {
 	@ManyToMany
 	private List<Habilidade> habilidades;
 
+	public Vaga( String nome,  String descricaoCargo, BigDecimal salario,  LocalDateTime dtAbertura,
+			 LocalDateTime dtEncerramento, LocalDateTime dtProgEnvioFeedback) {
+		this.nome = nome;
+		this.descricaoCargo = descricaoCargo;
+		this.salario = salario;
+		this.dtAbertura = dtAbertura;
+		this.dtEncerramento = dtEncerramento;
+		this.dtProgEnvioFeedback = dtProgEnvioFeedback;
+	}
 
+	
 }

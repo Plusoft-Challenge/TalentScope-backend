@@ -68,7 +68,7 @@ public class CurriculoController {
 		return ResponseEntity.noContent().build();
 	}
 
-	@PutMapping("/curriculos/{id}")
+	@PutMapping("/feedback/{feedbackId}/curriculo/{id}")
 	public ResponseEntity<Curriculo> update(@PathVariable Long id, @RequestBody @Valid Curriculo curriculo){
 		log.info("Atualizando curriculo com o id " + id);
 		getCurriculo(id);

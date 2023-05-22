@@ -2036,6 +2036,4 @@
 |  envioFeedback   | boolean |     sim     | Indica se o feedback foi enviado ou não                       |
 |  dtEnvioFeedback  | Date |     não     | Data em que o feedback foi enviado                        |
 
-
-
 </details>

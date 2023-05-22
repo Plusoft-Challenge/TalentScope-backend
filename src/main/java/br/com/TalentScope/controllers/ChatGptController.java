@@ -26,7 +26,7 @@ public class ChatGptController {
           OpenAiService service = new OpenAiService(TOKEN_OPEN_AI);
 
           CompletionRequest completionRequest = CompletionRequest.builder()
-                  .model("davinci")
+                  .model("ada")
                   .prompt(textChatGpt.getTexto())
                   .temperature(textChatGpt.getTemperature())
                   .maxTokens(2000)

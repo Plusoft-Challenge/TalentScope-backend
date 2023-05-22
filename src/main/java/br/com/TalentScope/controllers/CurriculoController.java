@@ -1,7 +1,6 @@
 package br.com.TalentScope.controllers;
 
 import java.util.List;
-import java.util.Optional;
 
 import javax.validation.Valid;
 
@@ -81,4 +80,5 @@ public class CurriculoController {
 		return repository.findById(id)
 				.orElseThrow(() -> new RestNotFoundException("curriculo não encontrado"));
 	}
+
 }

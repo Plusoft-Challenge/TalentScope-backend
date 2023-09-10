@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
@@ -36,16 +38,17 @@ public class Vaga {
 	private String descricaoCargo;
 
 	@NotBlank
+	@Size(max = 1000)
 	private String descricaoVaga;
 //	@NotNull
 //	@Digits(integer = 6, fraction = 2)
 //	private BigDecimal salario;
 
-	@NotBlank
+	@NotNull
 	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	private LocalDateTime dtAbertura;
 
-	@NotBlank
+	@NotNull
 	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	private LocalDateTime dtEncerramento;
 

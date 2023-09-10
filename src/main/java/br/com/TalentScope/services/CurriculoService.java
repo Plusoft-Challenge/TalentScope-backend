@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 
 import br.com.TalentScope.controllers.ChatGptController;
 import br.com.TalentScope.controllers.CurriculoController;
+import br.com.TalentScope.models.Curriculo;
 
 @Service
 public class CurriculoService {
@@ -23,6 +24,7 @@ public class CurriculoService {
 
 	ChatGptService chatGptService;
 	ChatGptController chatGptController;
+	Curriculo curriculo;
 
 	public void extractTextFromCurriculosInFolder(String sourceFolderPath, String outputFolderPath) throws IOException {
 		File sourceFolder = new File(sourceFolderPath);
@@ -34,7 +36,7 @@ public class CurriculoService {
 				extractTextFromCurriculo(cv, outputFolderPath);
 			}
 		} else {
-			log.info("Não tem currículos para análise.");
+			log.info("Não tem currículo para análise.");
 		}
 	}
 
@@ -52,12 +54,18 @@ public class CurriculoService {
 		PDFTextStripper pdfTextStripper = new PDFTextStripper();
 		// Extrai o texto do pdf
 		String text = pdfTextStripper.getText(document);
-		// Escreve o texto para o chatGpt
-		// chatGpt.setTexto(text);
-
+		
 		document.close();
 		log.info("Curriculo analisado");
-
+		
+		// Seta o texto
+//		if(text != null) {
+//			curriculo.setTexto(text);
+//		} else {
+//			log.error("Não foi extraido nenhum texto");
+//		}
+		
+		
 		String outputFileName = pdfFile.getName().replace(".pdf", ".txt");
 		File outputFile = new File(outputFolderPath, outputFileName);
 

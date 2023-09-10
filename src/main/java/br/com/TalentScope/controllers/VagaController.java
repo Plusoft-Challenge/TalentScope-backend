@@ -19,6 +19,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.TalentScope.exception.RestNotFoundException;
+import br.com.TalentScope.models.ChatGpt;
+import br.com.TalentScope.models.Curriculo;
+import br.com.TalentScope.models.Habilidade;
 import br.com.TalentScope.models.Vaga;
 import br.com.TalentScope.repository.VagaRepository;
 
@@ -27,48 +30,59 @@ import br.com.TalentScope.repository.VagaRepository;
 public class VagaController {
 	Logger log = LoggerFactory.getLogger(UsuarioController.class);
 
-	  @Autowired
-	  VagaRepository repository;
+	private List<Habilidade> habilidades;
 
-	  @GetMapping
-	  public List<Vaga> getAll(){
-	    return repository.findAll();
-	  }
+	ChatGptController chatGptController;
+	ChatGpt chatGpt;
+	Curriculo curriculo;
+	Vaga vaga;
 
-	  @PostMapping
-	  public ResponseEntity<Vaga> create(@RequestBody @Valid Vaga vaga){
-	    log.info("Cadastrando vaga: " + vaga);
+	@Autowired
+	VagaRepository repository;
 
-	    repository.save(vaga);
-	    return ResponseEntity.status(HttpStatus.CREATED).body(vaga);
-	  }
-	  
-	  @GetMapping("{id}")
-	  public ResponseEntity<Vaga> findById(@PathVariable Long id){
-		  log.info("Buscando vaga com id " + id);
-		  var vaga = getVaga(id);
-		  return ResponseEntity.ok(vaga);
-	  }
-	  
-	  @DeleteMapping("{id}")
-	  public ResponseEntity<Vaga> delete(@PathVariable Long id){
-		  log.info("Apagando vaga com o id " + id);
-		  var vaga = getVaga(id);
-		  repository.delete(vaga);
-		  return ResponseEntity.noContent().build();
-	  }
-	  
-	  @PutMapping("{id}")
-	  public ResponseEntity<Vaga> update(@PathVariable Long id, @RequestBody @Valid Vaga vaga){
-		  log.info("Atualizando vaga com o id " + id);
-		  getVaga(id);
-		  vaga.setId(id);
-		  repository.save(vaga);
-		  return ResponseEntity.ok(vaga);
-	  }
-	  
-	  private Vaga getVaga(Long id) {
-		  return repository.findById(id)
-				  .orElseThrow(() -> new RestNotFoundException("vaga não encontrada"));
-	  }
+	@GetMapping
+	public List<Vaga> getAll() {
+		return repository.findAll();
+	}
+
+	@PostMapping
+	public ResponseEntity<Vaga> create(@RequestBody @Valid Vaga vaga, Habilidade habilidade) {
+		log.info("Cadastrando vaga: " + vaga);
+		// setar lista de habilidade
+		habilidades.add(habilidade);
+		repository.save(vaga);
+
+		// Assim que a vaga é criada, o processo do chatgpt inicializa - Está correto???????
+		chatGptController.generate(chatGpt, curriculo, vaga);
+
+		return ResponseEntity.status(HttpStatus.CREATED).body(vaga);
+	}
+
+	@GetMapping("{id}")
+	public ResponseEntity<Vaga> findById(@PathVariable Long id) {
+		log.info("Buscando vaga com id " + id);
+		var vaga = getVaga(id);
+		return ResponseEntity.ok(vaga);
+	}
+
+	@DeleteMapping("{id}")
+	public ResponseEntity<Vaga> delete(@PathVariable Long id) {
+		log.info("Apagando vaga com o id " + id);
+		var vaga = getVaga(id);
+		repository.delete(vaga);
+		return ResponseEntity.noContent().build();
+	}
+
+	@PutMapping("{id}")
+	public ResponseEntity<Vaga> update(@PathVariable Long id, @RequestBody @Valid Vaga vaga) {
+		log.info("Atualizando vaga com o id " + id);
+		getVaga(id);
+		vaga.setId(id);
+		repository.save(vaga);
+		return ResponseEntity.ok(vaga);
+	}
+
+	private Vaga getVaga(Long id) {
+		return repository.findById(id).orElseThrow(() -> new RestNotFoundException("vaga não encontrada"));
+	}
 }

@@ -1,6 +1,5 @@
 package br.com.TalentScope.models;
 
-import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -10,8 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.validation.constraints.Digits;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.NotBlank;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
@@ -31,42 +29,41 @@ public class Vaga {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@NotNull
+	@NotBlank
 	private String nome;
 
-	@NotNull
+	@NotBlank
 	private String descricaoCargo;
 
-	@NotNull
-	@Digits(integer = 6, fraction = 2)
-	private BigDecimal salario;
+	@NotBlank
+	private String descricaoVaga;
+//	@NotNull
+//	@Digits(integer = 6, fraction = 2)
+//	private BigDecimal salario;
 
-	@NotNull
+	@NotBlank
 	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	private LocalDateTime dtAbertura;
 
-	@NotNull
+	@NotBlank
 	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	private LocalDateTime dtEncerramento;
 
-	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-	private LocalDateTime dtProgEnvioFeedback;
-	
+//	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+//	private LocalDateTime dtProgEnvioFeedback;
+
 	@ManyToOne
 	private Usuario usuario;
-	
+
 	@ManyToMany
 	private List<Habilidade> habilidades;
 
-	public Vaga( String nome,  String descricaoCargo, BigDecimal salario,  LocalDateTime dtAbertura,
-			 LocalDateTime dtEncerramento, LocalDateTime dtProgEnvioFeedback) {
+	public Vaga(String nome, String descricaoCargo, LocalDateTime dtAbertura, LocalDateTime dtEncerramento,
+			LocalDateTime dtProgEnvioFeedback) {
 		this.nome = nome;
 		this.descricaoCargo = descricaoCargo;
-		this.salario = salario;
 		this.dtAbertura = dtAbertura;
 		this.dtEncerramento = dtEncerramento;
-		this.dtProgEnvioFeedback = dtProgEnvioFeedback;
 	}
 
-	
 }

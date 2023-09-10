@@ -48,12 +48,11 @@ public class VagaController {
 	@PostMapping
 	public ResponseEntity<Vaga> create(@RequestBody @Valid Vaga vaga, Habilidade habilidade) {
 		log.info("Cadastrando vaga: " + vaga);
-		// setar lista de habilidade
-		habilidades.add(habilidade);
+
 		repository.save(vaga);
 
-		// Assim que a vaga é criada, o processo do chatgpt inicializa - Está correto???????
-		chatGptController.generate(chatGpt, curriculo, vaga);
+		// Assim que a vaga é criada, o processo do chatgpt inicializa - Está correto esse fluxo???????
+		//chatGptController.generate(chatGpt, curriculo, vaga);
 
 		return ResponseEntity.status(HttpStatus.CREATED).body(vaga);
 	}

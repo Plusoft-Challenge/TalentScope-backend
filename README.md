@@ -46,6 +46,7 @@
   - [Mostrar detalhes](#detalhar-um-curriculo)
   - [Atualizar](#atualizar-curriculo)
   - [Apagar](#apagar-curriculo)
+  - [Extrair](#aextrair-curriculo)
 
 <br/>
 
@@ -58,6 +59,16 @@
 
 <br/>
 
+- > <h2>ChatGPT</h2>
+  - [Criar consulta ChatGPT](#criar-consulta-chatgpt)
+
+<br/>
+
+- > <h2>Deploy Nuvem</h2>
+  - [Deploy e testes](#deploy-testes)
+
+<br/>
+
 
 <details>
 <summary>Usuario</summary>
@@ -65,7 +76,7 @@
 <br>
 
 <details>
-<summary> <b style="color:green">POST</b>/talentScope/usuario</summary>
+<summary> <b style="color:green">POST</b>/talentScope/usuarios</summary>
 
 <br/>
 
@@ -77,11 +88,11 @@
 
 ```json
 {
-  "nome": "Isabelle Souza Santos",
-  "email": "isabelle.souza@plusofit.com",
-  "senha": "123456",
+  "nome": "Rafael Ferreira",
+  "email": "rafael@plusofit.com",
+  "senha": "7894562",
 	"status": true,
-	"dtCriacao": "2023-05-03 10:08:02",
+	"dtCriacao": "2023-05-15 10:08:02",
 	"dtAlteracao": "",
 	"nivelPermissao": {
 		"id": 1
@@ -100,16 +111,16 @@
 ```json
 {
 	"id": 1,
-	"nome": "Isabelle Souza Santos",
-	"email": "isabelle.souza@plusofit.com",
-	"senha": "123456",
+	"nome": "Rafael Ferreira",
+	"email": "rafael@plusofit.com",
+	"senha": "7894562",
 	"status": true,
-	"dtCriacao": "2023-05-03 10:08:02",
+	"dtCriacao": "2023-05-15 10:08:02",
 	"dtAlteracao": null,
 	"nivelPermissao": {
 		"id": 1,
-		"nome": "Administrador",
-		"descricao": "Tem permissão total"
+		"nome": null,
+		"descricao": null
 	}
 }
 ```
@@ -131,7 +142,7 @@
 </details>
 
 <details>
-<summary> <b style="color:cyan">GET</b>/talentScope/usuario</summary>
+<summary> <b style="color:cyan">GET</b>/talentScope/usuarios</summary>
 
 <br/>
 
@@ -149,6 +160,20 @@
 [
 	{
 		"id": 1,
+		"nome": "Rafael Ferreira",
+		"email": "rafael@plusofit.com",
+		"senha": "7894562",
+		"status": true,
+		"dtCriacao": "2023-05-15 10:08:02",
+		"dtAlteracao": null,
+		"nivelPermissao": {
+			"id": 1,
+			"nome": "Acesso-1",
+			"descricao": "Tem permissão somente para leitura dos curriculos e vagas"
+		}
+	},
+	{
+		"id": 2,
 		"nome": "Isabelle Souza Santos",
 		"email": "isabelle.souza@plusofit.com",
 		"senha": "123456",
@@ -157,27 +182,11 @@
 		"dtAlteracao": null,
 		"nivelPermissao": {
 			"id": 1,
-			"nome": "Administrador",
-			"descricao": "Tem permissão total"
-		}
-	},
-	{
-		"id": 2,
-		"nome": "Rafael Souza",
-		"email": "rafael@plusofit.com",
-		"senha": "789456",
-		"status": true,
-		"dtCriacao": "2023-05-03 10:08:02",
-		"dtAlteracao": null,
-		"nivelPermissao": {
-			"id": 2,
-			"nome": "Consultor",
-			"descricao": "Tem permissão somente a consultas"
+			"nome": "Acesso-1",
+			"descricao": "Tem permissão somente para leitura dos curriculos e vagas"
 		}
 	}
 ]
-
-
 ```
 
 <br/>
@@ -209,7 +218,7 @@
 </details>
 
 <details>
-<summary> <b style="color:cyan">GET</b>/talentScope/usuario/{id}</summary>
+<summary> <b style="color:cyan">GET</b>/talentScope/usuarios/{id}</summary>
 
 <br/>
 
@@ -226,16 +235,16 @@
 ```json
 {
 	"id": 1,
-	"nome": "Isabelle Souza Santos",
-	"email": "isabelle.souza@plusofit.com",
-	"senha": "123456",
+	"nome": "Rafael Ferreira",
+	"email": "rafael@plusofit.com",
+	"senha": "7894562",
 	"status": true,
-	"dtCriacao": "2023-05-03 10:08:02",
+	"dtCriacao": "2023-05-15 10:08:02",
 	"dtAlteracao": null,
 	"nivelPermissao": {
 		"id": 1,
-		"nome": "Administrador",
-		"descricao": "Tem permissão total"
+		"nome": "Acesso-1",
+		"descricao": "Tem permissão somente para leitura dos curriculos e vagas"
 	}
 }
 ```
@@ -268,7 +277,7 @@
 </details>
 
 <details>
-<summary> <b style="color:orange">UPDATE</b>/talentScope/usuario/{id}</summary>
+<summary> <b style="color:orange">UPDATE</b>/talentScope/usuarios/{id}</summary>
 
 <br/>
 
@@ -279,12 +288,12 @@
 
 ```json
 {
-  "nome": "Isabelle Souza Santos",
-  "email": "isabelle.ss@plusofit.com",
-  "senha": "123456",
+  "nome": "Rafael Ferreira dos Santos",
+  "email": "rafael.santos@plusofit.com",
+  "senha": "7894562",
 	"status": true,
-	"dtCriacao": "2023-05-03 10:08:02",
-	"dtAlteracao": "2023-05-10 10:08:02",
+	"dtCriacao": "2023-05-15 10:08:02",
+	"dtAlteracao": "",
 	"nivelPermissao": {
 		"id": 2
 	}
@@ -302,17 +311,17 @@
 
 ```json
 {
-	"id": 2,
-	"nome": "Isabelle Souza Santos",
-	"email": "isabelle.ss@plusofit.com",
-	"senha": "123456",
+	"id": 1,
+	"nome": "Rafael Ferreira dos Santos",
+	"email": "rafael.santos@plusofit.com",
+	"senha": "7894562",
 	"status": true,
-	"dtCriacao": "2023-05-03 10:08:02",
-	"dtAlteracao": "2023-05-10 10:08:02",
+	"dtCriacao": "2023-05-15 10:08:02",
+	"dtAlteracao": null,
 	"nivelPermissao": {
 		"id": 2,
-		"nome": "Consultor",
-		"descricao": "Tem permissão somente a consultas"
+		"nome": null,
+		"descricao": null
 	}
 }
 ```
@@ -333,7 +342,7 @@
 </details>
 
 <details>
-<summary> <b style="color:red">DELETE</b>/talentScope/usuario/{id}</summary>
+<summary> <b style="color:red">DELETE</b>/talentScope/usuarios/{id}</summary>
 
 <br/>
 
@@ -403,6 +412,13 @@
 
 ```json
 {
+	"nome": "Acesso-1",
+	"descricao": "Tem permissão somente para leitura"
+}
+```
+
+```json
+{
   "nome": "Administrador",
   "descricao": "Usuário com permissão master"
 }
@@ -418,9 +434,17 @@
 
 ```json
 {
-  "id": 1,
-  "nome": "Administrador",
-  "descricao": "Usuário com permissão master"
+	"id": 1,
+	"nome": "Acesso-1",
+	"descricao": "Tem permissão somente para leitura"
+}
+```
+
+```json
+{
+	"id": 2,
+	"nome": "Administrador",
+	"descricao": "Usuário com permissão master"
 }
 ```
 
@@ -459,17 +483,15 @@
 [
 	{
 		"id": 1,
-		"nome": "Administrador",
-		"descricao": "Tem permissão total"
+		"nome": "Acesso-1",
+		"descricao": "Tem permissão somente para leitura"
 	},
 	{
 		"id": 2,
-		"nome": "Consultor",
-		"descricao": "Tem permissão somente a consultas"
+		"nome": "Administrador",
+		"descricao": "Usuário com permissão master"
 	}
 ]
-
-
 ```
 
 <br/>
@@ -517,9 +539,9 @@
 
 ```json
 {
-  "id": 1,
-  "nome": "Administrador",
-  "descricao": "Usuário com permissão master"
+	"id": 1,
+	"nome": "Acesso-1",
+	"descricao": "Tem permissão somente para leitura"
 }
 ```
 
@@ -562,8 +584,8 @@
 
 ```json
 {
-	"nome": "Administrador",
-	"descricao": "Permissão total."
+	"nome": "Acesso-1",
+	"descricao": "Tem permissão somente para leitura dos curriculos e vagas"
 }
 ```
 <br/>
@@ -579,8 +601,8 @@
 ```json
 {
 	"id": 1,
-	"nome": "Administrador",
-	"descricao": "Permissão total."
+	"nome": "Acesso-1",
+	"descricao": "Tem permissão somente para leitura dos curriculos e vagas"
 }
 ```
 <br/>
@@ -654,7 +676,7 @@
 <br>
 
 <details>
-<summary> <b style="color:green">POST</b>/talentScope/habilidade</summary>
+<summary> <b style="color:green">POST</b>/talentScope/habilidades</summary>
 
 <br/>
 
@@ -666,7 +688,12 @@
 
 ```json
 {
-	"nome": "Experiencia de 2 anos"
+	"nome": "Experiência com Banco de Dados Oracle SQL"
+}
+```
+```json
+{
+	"nome": "Experiência com Java, Spring Boot."
 }
 ```
 
@@ -681,7 +708,14 @@
 ```json
 {
 	"id": 1,
-	"nome": "Experiencia de 2 anos"
+	"nome": "Experiência com Banco de Dados Oracle SQL"
+}
+```
+
+```json
+{
+	"id": 2,
+	"nome": "Experiência com Java, Spring Boot."
 }
 ```
 
@@ -702,11 +736,11 @@
 </details>
 
 <details>
-<summary> <b style="color:cyan">GET</b>/talentScope/habilidade</summary>
+<summary> <b style="color:cyan">GET</b>/talentScope/habilidades</summary>
 
 <br/>
 
-### Listar niveis de permissoes
+### Listar habilidades
 
 <br/>
 
@@ -720,11 +754,11 @@
 [
 	{
 		"id": 1,
-		"nome": "Experiencia de 2 anos"
+		"nome": "Experiência com Banco de Dados Oracle SQL"
 	},
 	{
 		"id": 2,
-		"nome": "2 anos de experiência em Java com spring"
+		"nome": "Experiência com Java, Spring Boot."
 	}
 ]
 ```
@@ -758,7 +792,7 @@
 </details>
 
 <details>
-<summary> <b style="color:cyan">GET</b>/talentScope/habilidade/{id}</summary>
+<summary> <b style="color:cyan">GET</b>/talentScope/habilidades/{id}</summary>
 
 <br/>
 
@@ -774,7 +808,7 @@
 ```json
 {
 	"id": 2,
-	"nome": "2 anos de experiência em Java com spring"
+	"nome": "Experiência com Java, Spring Boot."
 }
 ```
 
@@ -787,7 +821,12 @@
 
 ```json
 {
-  "retorno": "Habilidade não cadastrada"
+	"timestamp": "2023-09-11T22:45:11.000+00:00",
+	"status": 404,
+	"error": "Not Found",
+	"trace": "br.com.TalentScope.exception.RestNotFoundException......",
+	"message": "habilidade não encontrado",
+	"path": "/talentScope/habilidades/3"
 }
 ```
 
@@ -806,7 +845,7 @@
 </details>
 
 <details>
-<summary> <b style="color:orange">UPDATE</b>/talentScope/habilidade/{id}</summary>
+<summary> <b style="color:orange">UPDATE</b>/talentScope/habilidades/{id}</summary>
 
 <br/>
 
@@ -905,7 +944,7 @@
 <br>
 
 <details>
-<summary> <b style="color:green">POST</b>/talentScope/vaga</summary>
+<summary> <b style="color:green">POST</b>/talentScope/vagas</summary>
 
 <br/>
 
@@ -917,21 +956,17 @@
 
 ```json
 {
-	"nome": "Desenvolvedor Java",
-	"descricaoCargo": "Programação orientada a objetos, uso de frameworks Spring, experiência em testes, trabalho em equipe, aplicações web e bancos de dados.",
-	"salario": 6000.00,
-	"dtAbertura": "2023-05-03 12:00:00",
-	"dtEncerramento": "2023-07-03 12:00:00",
-	"dtProgEnvioFeedback": "2023-05-20 16:00:00",
+	"nome": "Analista de Sistemas I",
+	"descricaoCargo": "Desenvolver Java Junior",
+	"descricaoVaga": "A vaga de desenvolvedor Java requer habilidades em programação orientada a objetos, uso de frameworks como Spring e Hibernate, experiência em testes e depuração de código, trabalho em equipe e conhecimentos em tecnologias relacionadas a aplicações web e bancos de dados.",
+	"dtAbertura": "2023-10-09 14:00:00",
+	"dtEncerramento": "2023-07-22 17:00:00",
 	"usuario":{
 		"id": 1
 	},
 	"habilidades": [
 		{
 		"id": 1
-		},
-		{
-		"id": 2
 		}
 	]
 }
@@ -948,12 +983,11 @@
 ```json
 {
 	"id": 1,
-	"nome": "Desenvolvedor Java",
-	"descricaoCargo": "Programação orientada a objetos, uso de frameworks Spring, experiência em testes, trabalho em equipe, aplicações web e bancos de dados.",
-	"salario": 6000.00,
-	"dtAbertura": "2023-05-03 12:00:00",
-	"dtEncerramento": "2023-07-03 12:00:00",
-	"dtProgEnvioFeedback": "2023-05-20 16:00:00",
+	"nome": "Analista de Sistemas I",
+	"descricaoCargo": "Desenvolver Java Junior",
+	"descricaoVaga": "A vaga de desenvolvedor Java requer habilidades em programação orientada a objetos, uso de frameworks como Spring e Hibernate, experiência em testes e depuração de código, trabalho em equipe e conhecimentos em tecnologias relacionadas a aplicações web e bancos de dados.",
+	"dtAbertura": "2023-10-09 14:00:00",
+	"dtEncerramento": "2023-07-22 17:00:00",
 	"usuario": {
 		"id": 1,
 		"nome": null,
@@ -967,10 +1001,6 @@
 	"habilidades": [
 		{
 			"id": 1,
-			"nome": null
-		},
-		{
-			"id": 2,
 			"nome": null
 		}
 	]
@@ -994,7 +1024,7 @@
 </details>
 
 <details>
-<summary> <b style="color:cyan">GET</b>/talentScope/vaga</summary>
+<summary> <b style="color:cyan">GET</b>/talentScope/vagas</summary>
 
 <br/>
 
@@ -1012,72 +1042,61 @@
 [
 	{
 		"id": 1,
-		"nome": "Desenvolvedor Java",
-		"descricaoCargo": "Programação orientada a objetos, uso de frameworks Spring, experiência em testes, trabalho em equipe, aplicações web e bancos de dados.",
-		"salario": 6000.00,
-		"dtAbertura": "2023-05-03 12:00:00",
-		"dtEncerramento": "2023-07-03 12:00:00",
-		"dtProgEnvioFeedback": "2023-05-20 16:00:00",
+		"nome": "Analista de Sistemas I",
+		"descricaoCargo": "Desenvolver Java Junior",
+		"descricaoVaga": "A vaga de desenvolvedor Java requer habilidades em programação orientada a objetos, uso de frameworks como Spring e Hibernate, experiência em testes e depuração de código, trabalho em equipe e conhecimentos em tecnologias relacionadas a aplicações web e bancos de dados.",
+		"dtAbertura": "2023-10-09 14:00:00",
+		"dtEncerramento": "2023-07-22 17:00:00",
 		"usuario": {
 			"id": 1,
-			"nome": "Isabelle Souza Santos",
-			"email": "isabelle.souza@plusofit.com",
-			"senha": "123456",
+			"nome": "Rafael Ferreira dos Santos",
+			"email": "rafael.santos@plusofit.com",
+			"senha": "7894562",
 			"status": true,
-			"dtCriacao": "2023-05-03 10:08:02",
+			"dtCriacao": "2023-05-15 10:08:02",
 			"dtAlteracao": null,
 			"nivelPermissao": {
-				"id": 1,
+				"id": 2,
 				"nome": "Administrador",
-				"descricao": "Permissão total."
+				"descricao": "Usuário com permissão master"
 			}
 		},
 		"habilidades": [
 			{
 				"id": 1,
-				"nome": "Experiencia de 2 anos"
-			},
-			{
-				"id": 2,
-				"nome": "2 anos de experiência em Java com spring, JPA Hibernate"
+				"nome": "Experiência com Banco de Dados Oracle SQL"
 			}
 		]
 	},
 	{
 		"id": 2,
-		"nome": "Analista de Sistemas I",
-		"descricaoCargo": "Desenvolver sistemas em Java",
-		"salario": 5000.00,
-		"dtAbertura": "2023-05-15 14:00:00",
-		"dtEncerramento": "2023-07-22 17:00:00",
-		"dtProgEnvioFeedback": "2023-05-23 16:00:00",
+		"nome": "Analista de Dados",
+		"descricaoCargo": "Analista de dados Senior",
+		"descricaoVaga": "Estamos em busca de um Analista de Dados talentoso e apaixonado por números para se juntar à nossa equipe. O candidato ideal será responsável por coletar, analisar e interpretar dados, transformando-os em informações valiosas para orientar a tomada de decisões estratégicas da empresa. Você trabalhará em estreita colaboração com outras equipes para identificar tendências, padrões e insights que impulsionarão nosso negócio.",
+		"dtAbertura": "2023-10-15 15:00:00",
+		"dtEncerramento": "2023-12-22 17:00:00",
 		"usuario": {
-			"id": 2,
-			"nome": "Isabelle Souza Santos",
-			"email": "isabelle.ss@plusofit.com",
-			"senha": "123456",
+			"id": 1,
+			"nome": "Rafael Ferreira dos Santos",
+			"email": "rafael.santos@plusofit.com",
+			"senha": "7894562",
 			"status": true,
-			"dtCriacao": "2023-05-03 10:08:02",
-			"dtAlteracao": "2023-05-10 10:08:02",
+			"dtCriacao": "2023-05-15 10:08:02",
+			"dtAlteracao": null,
 			"nivelPermissao": {
 				"id": 2,
-				"nome": "Consultor",
-				"descricao": "Tem permissão somente a consultas"
+				"nome": "Administrador",
+				"descricao": "Usuário com permissão master"
 			}
 		},
 		"habilidades": [
 			{
 				"id": 1,
-				"nome": "Experiencia de 2 anos"
-			},
-			{
-				"id": 2,
-				"nome": "2 anos de experiência em Java com spring, JPA Hibernate"
+				"nome": "Experiência com Banco de Dados Oracle SQL"
 			}
 		]
 	}
 ]
-
 ```
 
 <br/>
@@ -1109,7 +1128,7 @@
 </details>
 
 <details>
-<summary> <b style="color:cyan">GET</b>/talentScope/vaga/{id}</summary>
+<summary> <b style="color:cyan">GET</b>/talentScope/vagas/{id}</summary>
 <br/>
 
 ### Detalhar uma vaga
@@ -1125,34 +1144,29 @@
 ```json
 {
 	"id": 1,
-	"nome": "Desenvolvedor Java",
-	"descricaoCargo": "Programação orientada a objetos, uso de frameworks Spring, experiência em testes, trabalho em equipe, aplicações web e bancos de dados.",
-	"salario": 6000.00,
-	"dtAbertura": "2023-05-03 12:00:00",
-	"dtEncerramento": "2023-07-03 12:00:00",
-	"dtProgEnvioFeedback": "2023-05-20 16:00:00",
+	"nome": "Analista de Sistemas I",
+	"descricaoCargo": "Desenvolver Java Junior",
+	"descricaoVaga": "A vaga de desenvolvedor Java requer habilidades em programação orientada a objetos, uso de frameworks como Spring e Hibernate, experiência em testes e depuração de código, trabalho em equipe e conhecimentos em tecnologias relacionadas a aplicações web e bancos de dados.",
+	"dtAbertura": "2023-10-09 14:00:00",
+	"dtEncerramento": "2023-07-22 17:00:00",
 	"usuario": {
 		"id": 1,
-		"nome": "Isabelle Souza Santos",
-		"email": "isabelle.souza@plusofit.com",
-		"senha": "123456",
+		"nome": "Rafael Ferreira dos Santos",
+		"email": "rafael.santos@plusofit.com",
+		"senha": "7894562",
 		"status": true,
-		"dtCriacao": "2023-05-03 10:08:02",
+		"dtCriacao": "2023-05-15 10:08:02",
 		"dtAlteracao": null,
 		"nivelPermissao": {
-			"id": 1,
+			"id": 2,
 			"nome": "Administrador",
-			"descricao": "Permissão total."
+			"descricao": "Usuário com permissão master"
 		}
 	},
 	"habilidades": [
 		{
 			"id": 1,
-			"nome": "Experiencia de 2 anos"
-		},
-		{
-			"id": 2,
-			"nome": "2 anos de experiência em Java com spring, JPA Hibernate"
+			"nome": "Experiência com Banco de Dados Oracle SQL"
 		}
 	]
 }
@@ -1186,7 +1200,7 @@
 </details>
 
 <details>
-<summary> <b style="color:orange">UPDATE</b>/talentScope/vaga/{id}</summary>
+<summary> <b style="color:orange">UPDATE</b>/talentScope/vagas/{id}</summary>
 
 <br/>
 
@@ -1197,13 +1211,20 @@
 
 ```json
 {
-	"nome": "Analista de Sistemas I",
-	"descricaoCargo": "Desenvolver sistema de negociação de investimentos",
-	"salario": 5000.00,
-	"dtAbertura": "2023-05-15 14:00:00",
-	"dtEncerramento": "2023-07-22 17:00:00",
-	"dtProgEnvioFeedback": "2023-05-23 16:00:00",
+	"nome": "Analista de Dados II",
+	"descricaoCargo": "Analista de dados Pleno",
+	"descricaoVaga": "Estamos em busca de um Analista de Dados talentoso e apaixonado por números para se juntar à nossa equipe. O candidato ideal será responsável por coletar, analisar e interpretar dados, transformando-os em informações valiosas para orientar a tomada de decisões estratégicas da empresa. Você trabalhará em estreita colaboração com outras equipes para identificar tendências, padrões e insights que impulsionarão nosso negócio.",
+	"dtAbertura": "2023-10-15 15:00:00",
+	"dtEncerramento": "2023-12-22 17:00:00",
 	"usuario":{
+		"id": 1
+	},
+	"habilidades": [
+		{
+		"id": 1
+		}
+	]
+}	"usuario":{
 		"id": 2
 	},
 	"habilidades": [
@@ -1226,14 +1247,13 @@
 ```json
 {
 	"id": 2,
-	"nome": "Analista de Sistemas I",
-	"descricaoCargo": "Desenvolver sistema de negociação de investimentos",
-	"salario": 5000.00,
-	"dtAbertura": "2023-05-15 14:00:00",
-	"dtEncerramento": "2023-07-22 17:00:00",
-	"dtProgEnvioFeedback": "2023-05-23 16:00:00",
+	"nome": "Analista de Dados II",
+	"descricaoCargo": "Analista de dados Pleno",
+	"descricaoVaga": "Estamos em busca de um Analista de Dados talentoso e apaixonado por números para se juntar à nossa equipe. O candidato ideal será responsável por coletar, analisar e interpretar dados, transformando-os em informações valiosas para orientar a tomada de decisões estratégicas da empresa. Você trabalhará em estreita colaboração com outras equipes para identificar tendências, padrões e insights que impulsionarão nosso negócio.",
+	"dtAbertura": "2023-10-15 15:00:00",
+	"dtEncerramento": "2023-12-22 17:00:00",
 	"usuario": {
-		"id": 2,
+		"id": 1,
 		"nome": null,
 		"email": null,
 		"senha": null,
@@ -1311,10 +1331,9 @@
 |          id         |  numeric(10)  |     sim     | Id da vaga                               |
 |         nome        |  varchar(80)  |     sim     | Nome da vaga                             |
 |       descricaoCargo     |    varchar    |     sim     | Descrição do cargo                       |
-|        salario      |  double(6,2)  |     sim     | Valor do salário                         |
+|       descricaoVaga     |    varchar    |     sim     | Descrição da vaga                      |
 |     dtAbertura   |   Datetime    |     sim     | Data da abertura da vaga                 |
 |  dtEncerramento  |   Datetime    |     sim     | Data do encerramento da vaga             |
-| dtProgEnvioFeedback |   Datetime    |     sim     | Data programada para o envio do feedback |
 |       usuarios      |  fk_usuario   |     sim     | Um usuario pode ter varias vagas         |
 |      habilidades    | fk_habilidade |     sim     | Uma vaga pode ter várias habilidades     |
 
@@ -1326,7 +1345,7 @@
 <br>
 
 <details>
-<summary> <b style="color:green">POST</b> /talentScope/feedback/{feedbackId}/curriculo</summary>
+<summary> <b style="color:green">POST</b> /talentScope/feedback/{feedbackId}/curriculos</summary>
 
 <br/>
 
@@ -1401,7 +1420,7 @@
 </details>
 
 <details>
-<summary> <b style="color:cyan">GET</b>/talentScope/curriculo</summary>
+<summary> <b style="color:cyan">GET</b>/talentScope/curriculos</summary>
 
 <br/>
 
@@ -1545,7 +1564,7 @@
 </details>
 
 <details>
-<summary> <b style="color:cyan">GET</b>/talentScope/curriculo/{id}</summary>
+<summary> <b style="color:cyan">GET</b>/talentScope/curriculos/{id}</summary>
 
 ### Detalhes um curriculo
 
@@ -1636,7 +1655,7 @@
 </details>
 
 <details>
-<summary> <b style="color:orange">UPDATE</b> /talentScope/feedback/{feedbackId}/curriculo/{id}</summary>
+<summary> <b style="color:orange">UPDATE</b> /talentScope/feedback/{feedbackId}/curriculos/{id}</summary>
 
 <br/>
 
@@ -1737,6 +1756,38 @@
 {
   "retorno": "Curriculo não cadastrado"
 }
+```
+
+</details>
+
+<details>
+<summary> <b style="color:cyan">GET</b>/talentScope/extract</summary>
+
+<br/>
+
+### Extrair curriculo
+
+<br/>
+
+### Responses:
+
+`status code: 200`
+
+#### Body: <b>Application/json</b>
+
+```
+"Extração do currículo em PDF concluída com sucesso!"
+```
+
+<br/>
+<hr>
+
+`status code: 400`
+
+#### Body: <b>Application/json</b>
+
+```
+"Extração não realizada"
 ```
 
 </details>
@@ -2036,4 +2087,94 @@
 |  envioFeedback   | boolean |     sim     | Indica se o feedback foi enviado ou não                       |
 |  dtEnvioFeedback  | Date |     não     | Data em que o feedback foi enviado                        |
 
+</details>
+
+<details>
+<summary>Chat GPT</summary>
+
+<br>
+
+<summary> <b style="color:green">POST</b>/talentScope/chatgpt/text</summary>
+
+<br/>
+
+### Criar consulta ChatGPT
+
+<br/>
+
+### Responses:
+
+`status code: 200`
+
+#### Body: <b>Application/json</b>
+
+```json
+{
+	"texto": "Ana Cristina Ferreira ana.cristina.ferreira@email.com.br (XX) 99999-9999 linkedin.com/in/acferreira Programadora ousada com conhecimentos de C#, C++ e Python. Recém formada em TI na Universidade X com média 9,5, trabalhei como programadora em C# voluntário no Vídeo Game X. Nosso projeto recebeu o prêmio de melhor jogo independente brasileiro. Busco combinar o que aprendi na indústria do vídeo game com o que aprendi na faculdade para criar código inovadores para os clientes da Empresa X. Experiência como voluntária Programadora em C# Vídeo Game X (de janeiro de 2019 até fevereiro de 2020) Implementei as mecânicas do jogo no motor gráfico Unity 3D; Programei a inteligência artificial dos inimigos do jogo; Importei diversos tipos de arquivos como áudio, texturas e objetos 3D no jogo. Colaborei com designers e artistas. Principal conquista: Recebemos análises positivas de 95% dos jogadores. Formação acadêmica Bacharelado em TI Universidade X (fevereiro de 2020) Presidente do clube de estudos de design de jogos; Aula favorita: Modelagem de dados. Fiz aulas de inteligência artificial como atividade extracurricular. Principais conquistas: Me formei como orador da turma; Tirei nota 10 no meu TCC. Competências e habilidades Trabalho em equipe, adquirida após trabalhar como voluntário no Vídeo Game X; Design de sistemas, adquirida após fazer um curso na Escola X; Gamificação, adquirida após colaborar com o game designer do Vídeo Game X; Inglês avançado, adquirida após me formar no Curso de Inglês X; Espanhol intermediário, adquirido ao fazer aulas no Curso de Espanhol X. Informações adicionais Vencedora do Game Jam 2019 da Universidade X; Apaixonada por arte e criatividade. Anaisando o curriculo acima para uma vaga que tem essa descrição: A vaga de desenvolvedor Java requer habilidades em programação orientada a objetos, uso de frameworks como Spring e Hibernate, experiência em testes e depuração de código, trabalho em equipe e conhecimentos em tecnologias relacionadas a aplicações web e bancos de dados. E requer essas habilidades: Banco de dados Oracle, 2 anos de experiência em Java com spring, JPA Hibernate. Com base na vaga e habilidades, analisando o curriculo, em um ranking de 1 a 5, qual é a posição desse candidato para essa vaga? Retorne também o nome do candidato e o e-mail. Retorne o ranking, o nome e o e-mail do candidato exatamente nessa ordem, e exatamente como no exemplo: ranking:5|nome:joao|email:joao@email"
+}
+```
+
+<br/>
+<hr>
+
+
+### Responses:
+
+`status code: 200`
+
+#### Tipo do body: <b>Application/json</b>
+
+```json
+[
+	{
+		"text": ".com.\n\nRanking:2|Nome:Ana Cristina Ferreira|Email:ana.cristina.ferreira@email.com.br",
+		"index": 0,
+		"logprobs": null,
+		"finish_reason": "stop"
+	}
+]
+```
+
+`status code: 400`
+
+#### Body: <b>Application/json</b>
+
+```
+Incorrect API key provided: sk-NytsI***************************************o1M0. You can find your API key at https://platform.openai.com/account/api-keys.
+```
+
+```
+You exceeded your current quota, please check your plan and billing details.
+```
+
+
+<br/><br/>
+
+# Campo de Requisição
+
+|       campo       |     tipo    | obrigatório | descrição                                 |
+| :---------------: | :---------: | :---------: | ------------------------------------------|
+|        texto         |     string     |     sim     | Texto que vai na consulta para o Chat GPT |
+
+</details>
+
+<details>
+<summary>Deploy</summary>
+
+## Pré-requisitos
+
+Antes de começar, certifique-se de ter o seguinte instalado e configurado:
+
+- [Java JDK](https://www.oracle.com/java/technologies/javase-downloads.html) (versão 11 ou superior)
+- [Maven](https://maven.apache.org/download.cgi)
+- [Docker](https://www.docker.com/)
+- [Sql Developer](https://www.oracle.com/database/sqldeveloper/)
+
+## Configuração
+
+1. Clone este repositório:
+
+   ```bash
+   https://github.com/Plusoft-Challenge/TalentScope-backend
+   cd TalentScope-backend
 </details>

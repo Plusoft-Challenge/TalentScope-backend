@@ -2159,22 +2159,40 @@ You exceeded your current quota, please check your plan and billing details.
 </details>
 
 <details>
-<summary>Deploy</summary>
+<summary>DevOps</summary>
 
-## Pré-requisitos
+## Benefícios
+- [Veja os benefícios da aplicação em nuvem](https://www.canva.com/design/DAFuRHPwQGQ/1K0VD-khZl63pLQ9myj2tw/view?utm_content=DAFuRHPwQGQ&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink)
+
+
+## Pré-requisitos para rodar a aplicação
 
 Antes de começar, certifique-se de ter o seguinte instalado e configurado:
 
-- [Java JDK](https://www.oracle.com/java/technologies/javase-downloads.html) (versão 11 ou superior)
+- [Azure Cli](https://learn.microsoft.com/pt-br/cli/azure/install-azure-cli)
 - [Maven](https://maven.apache.org/download.cgi)
-- [Docker](https://www.docker.com/)
-- [Sql Developer](https://www.oracle.com/database/sqldeveloper/)
 
 ## Configuração
 
-1. Clone este repositório:
+1. Clone o repositório do projeto:
 
    ```bash
-   https://github.com/Plusoft-Challenge/TalentScope-backend
+   git clone https://github.com/Plusoft-Challenge/TalentScope-backend
    cd TalentScope-backend
+	 ```
+
+2. Faça o login no Azure:
+
+   ```bash
+   az login
+	 ```
+
+4. Rodar a aplicação:
+
+   ```bash
+	Infelizmente não conseguimos rodar a aplicação na nuvem :(
+		Tivemos muitos problemas com a conexão/permissão do Azure.
+	 ```
+
+
 </details>

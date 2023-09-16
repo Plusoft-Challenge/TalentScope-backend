@@ -1,9 +1,15 @@
-FROM eclipse-temurin:17-jdk-alpine
+FROM openjdk:17
 
-ARG JAR_FILE=target/*.jar
+WORKDIR /app
 
-COPY ${JAR_FILE} TalentScope-0.0.1-SNAPSHOT.jar
+COPY . /app/
 
 EXPOSE 8080
 
-ENTRYPOINT ["java","-jar","/TalentScope-0.0.1-SNAPSHOT.jar"]
+RUN sed -i 's/\r$//' mvnw
+
+RUN chmod +x mvnw
+
+RUN ./mvnw clean package
+
+CMD ["java", "-jar", "target//TalentScope-0.0.1-SNAPSHOT.jar"]

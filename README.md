@@ -2187,12 +2187,40 @@ Antes de começar, certifique-se de ter o seguinte instalado e configurado:
    az login
 	 ```
 
-4. Rodar a aplicação:
+4. Criar a imagem da aplicação:
 
    ```bash
-	Infelizmente não conseguimos rodar a aplicação na nuvem :(
-		Tivemos muitos problemas com a conexão/permissão do Azure.
+	docker build -t talentscope .
+	 ```
+   
+5. Criar o Container Registry para que seja possível registrar a image
+   Acessar Chaves de acesso e habilitar o Usuário administrador. Será necessário para utilizar o login e senha na hora de fazer o push da imagem
+	
+   
+7. Fazer o push da Imagem Docker para o Container Registry
+   Informar o login e senha.
+
+   ```bash
+	docker login talentscope.azurecr.io
+	 ```
+   
+8. Prefixar a imagem com o URI
+   
+   ```bash
+	docker tag talentscope talentscope.azurecr.io/talentscope
+	 ```
+   
+9. Push para o Servidor de registo
+   
+   ```bash
+	docker push talentscope.azurecr.io/talentscope
 	 ```
 
+10. Criar o Container Instance
+   Em 'Fonte de imagem', escolher a opção 'Registro de container do Azure' para que seja possível selecionar o Registro criado no Container Registry. Será gerado um IP para que sejá possível navegar na aplicação. 
+
+
+11. Com o IP gerado, você poderá realizar os cruds da aplicação no Insomnia conforme os Jsons que constam no acima.
+    Obs.: Na URL do Insomnia, trocar o 'localhost' pelo IP gerado.
 
 </details>

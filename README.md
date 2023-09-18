@@ -2169,19 +2169,20 @@ You exceeded your current quota, please check your plan and billing details.
 
 Antes de começar, certifique-se de ter o seguinte instalado e configurado:
 
-- [Azure Cli](https://learn.microsoft.com/pt-br/cli/azure/install-azure-cli)
-- [Maven](https://maven.apache.org/download.cgi)
+- [Azure](https://portal.azure.com/)
+- [Docker](https://www.docker.com/)
+- [Oracle Database](https://www.oracle.com/br/database/)
 
 ## Configuração
 
-1. Clone o repositório do projeto:
+1. Clone o repositório do projeto.
 
    ```bash
    git clone https://github.com/Plusoft-Challenge/TalentScope-backend
    cd TalentScope-backend
 	 ```
 
-2. Faça o login no Azure:
+3. Faça o login no Azure:
 
    ```bash
    az login
@@ -2221,6 +2222,9 @@ Antes de começar, certifique-se de ter o seguinte instalado e configurado:
 
 
 11. Com o IP gerado, você poderá realizar os cruds da aplicação no Insomnia conforme os Jsons que constam no acima.
-    Obs.: Na URL do Insomnia, trocar o 'localhost' pelo IP gerado.
+    Obs.: Na URL do Insomnia, trocar o 'localhost' pelo IP gerado
+
+12. Verifique as gravações no Banco de Dado Oracle
+    
 
 </details>

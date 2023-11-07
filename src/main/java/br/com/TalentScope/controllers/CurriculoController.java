@@ -53,7 +53,6 @@ public class CurriculoController {
 		return repository.findAll();
 	}
 
-	// @PostMapping("/feedback/{feedbackId}/curriculo")
 	@PostMapping("/curriculo")
 	public ResponseEntity<Curriculo> create(@PathVariable(value = "feedbackId") Long feedbackId,
 			@RequestBody @Valid Curriculo curriculo) {
@@ -84,7 +83,6 @@ public class CurriculoController {
 		return ResponseEntity.noContent().build();
 	}
 
-//	@PutMapping("/feedback/{feedbackId}/curriculo/{id}")
 	@PutMapping("/curriculo/{id}")
 	public ResponseEntity<Curriculo> update(@PathVariable Long id, @RequestBody @Valid Curriculo curriculo) {
 		log.info("Atualizando curriculo com o id " + id);

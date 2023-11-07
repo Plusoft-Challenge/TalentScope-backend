@@ -30,11 +30,10 @@ import br.com.TalentScope.repository.VagaRepository;
 public class VagaController {
 	Logger log = LoggerFactory.getLogger(UsuarioController.class);
 
-	private List<Habilidade> habilidades;
-
 	ChatGptController chatGptController;
 	ChatGpt chatGpt;
 	Curriculo curriculo;
+
 	Vaga vaga;
 
 	@Autowired
@@ -62,6 +61,16 @@ public class VagaController {
 		log.info("Buscando vaga com id " + id);
 		var vaga = getVaga(id);
 		return ResponseEntity.ok(vaga);
+	}
+
+	public String findDescriptionById(@PathVariable Long id){
+		var descricao = getVaga(id).getDescricaoVaga();
+		return descricao;
+	}
+
+	public List<Habilidade> findHabilitiesById(@PathVariable Long id){
+		List<Habilidade> habilidades = getVaga(id).getHabilidades();
+		return habilidades;
 	}
 
 	@DeleteMapping("{id}")

@@ -40,21 +40,22 @@ public class CurriculoService {
 		}
 	}
 
-	private void extractTextFromCurriculo(File pdfFile, String outputFolderPath) throws IOException {
+	public String extractTextFromCurriculo(File pdfFile, String outputFolderPath) throws IOException {
 
 		String fileName = pdfFile.getName();
 
 		// Verifica se o currículo já foi processado
 		if (curriculosProcessados.contains(fileName)) {
-			log.info("Currículo já foi processado anteriormente: " + fileName);
-			return;
+			var error = "Currículo já foi processado anteriormente: " + fileName;
+			return error;
 		}
 
 		PDDocument document = PDDocument.load(pdfFile);
 		PDFTextStripper pdfTextStripper = new PDFTextStripper();
-		// Extrai o texto do pdf
+		// Extrai o texto do curriculo
 		String text = pdfTextStripper.getText(document);
-		
+		//seta o conteudo do currículo no texto do curriculo
+
 		document.close();
 		log.info("Curriculo analisado");
 		
@@ -77,6 +78,8 @@ public class CurriculoService {
 
 		// Adiciona o nome do currículo ao conjunto de currículos processados
 		curriculosProcessados.add(fileName);
+
+		return text;
 	}
 
 }

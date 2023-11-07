@@ -3,6 +3,7 @@ package br.com.TalentScope.models;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -60,7 +61,7 @@ public class Vaga {
 	@ManyToOne
 	private Usuario usuario;
 
-	@ManyToMany
+	@ManyToMany(mappedBy = "vagas")
 	private List<Habilidade> habilidades;
 
 	public Vaga(String nome, String descricaoCargo, LocalDateTime dtAbertura, LocalDateTime dtEncerramento,

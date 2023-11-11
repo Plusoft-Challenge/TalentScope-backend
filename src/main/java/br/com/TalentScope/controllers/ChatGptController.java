@@ -36,12 +36,12 @@ public class ChatGptController {
 	private String TOKEN_OPEN_AI;
 
 	@PostMapping
-	public ResponseEntity<?> generate(@RequestBody ChatGpt textChatGpt, Curriculo curriculo, Vaga vaga) {
+	public ResponseEntity<?> generate(@RequestBody Vaga vaga) {
 		try {
 			OpenAiService service = new OpenAiService(TOKEN_OPEN_AI);
 
 			CompletionRequest completionRequest = CompletionRequest.builder().model("text-davinci-003")
-					.prompt(chatGptService.generateTextGpt(curriculo, vaga))
+					.prompt(chatGptService.generateTextGpt(vaga))
 					// .temperature(textChatGpt.getTemperature())
 					.maxTokens(3000).build();
 

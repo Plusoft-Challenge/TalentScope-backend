@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 
 import br.com.TalentScope.controllers.ChatGptController;
 import br.com.TalentScope.controllers.CurriculoController;
+import br.com.TalentScope.models.ChatGpt;
 import br.com.TalentScope.models.Curriculo;
 
 @Service
@@ -21,6 +22,7 @@ public class CurriculoService {
 	Logger log = LoggerFactory.getLogger(CurriculoController.class);
 
 	private Set<String> curriculosProcessados = new HashSet();
+	// private String cvContent;
 
 	ChatGptService chatGptService;
 	ChatGptController chatGptController;
@@ -40,14 +42,18 @@ public class CurriculoService {
 		}
 	}
 
-	public String extractTextFromCurriculo(File pdfFile, String outputFolderPath) throws IOException {
+	// public String textCurriculo(){
+	// 	return cvContent;
+	// }
+
+	public void extractTextFromCurriculo(File pdfFile, String outputFolderPath) throws IOException {
+		ChatGpt chatGpt = new ChatGpt();
 
 		String fileName = pdfFile.getName();
 
 		// Verifica se o currículo já foi processado
 		if (curriculosProcessados.contains(fileName)) {
-			var error = "Currículo já foi processado anteriormente: " + fileName;
-			return error;
+			log.info("Currículo já foi processado anteriormente: " + fileName);
 		}
 
 		PDDocument document = PDDocument.load(pdfFile);
@@ -55,18 +61,18 @@ public class CurriculoService {
 		// Extrai o texto do curriculo
 		String text = pdfTextStripper.getText(document);
 		//seta o conteudo do currículo no texto do curriculo
+		chatGpt.setTexto(text);
 
 		document.close();
-		log.info("Curriculo analisado");
-		
+		log.info("Curriculo analisado: " + fileName);
+
 		// Seta o texto
 //		if(text != null) {
 //			curriculo.setTexto(text);
 //		} else {
 //			log.error("Não foi extraido nenhum texto");
 //		}
-		
-		
+
 		String outputFileName = pdfFile.getName().replace(".pdf", ".txt");
 		File outputFile = new File(outputFolderPath, outputFileName);
 
@@ -78,8 +84,6 @@ public class CurriculoService {
 
 		// Adiciona o nome do currículo ao conjunto de currículos processados
 		curriculosProcessados.add(fileName);
-
-		return text;
 	}
 
 }
